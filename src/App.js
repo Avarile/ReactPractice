@@ -1,10 +1,6 @@
-import HookCounter from "./Modules/DataManagment/index";
+import React from "react";
+import TestsPortal from "./Modules/DataManagement/TestsPortal";
 
-function App() {
-  return (
-    <>
-      <HookCounter></HookCounter>
-    </>
-  );
+export default function App() {
+  return <></>;
 }
-export default App;
