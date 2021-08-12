@@ -1,0 +1,30 @@
+.nav-menu {
+  display: flex;
+  padding: 1rem;
+
+  a {
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: none;
+    &:focus,
+    &:hover,
+    &:visited {
+      color: black;
+      //  平时没有任何style, 但在focus hover 和 visited时 变黑
+    }
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    margin-left: auto;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+}
