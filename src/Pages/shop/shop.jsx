@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Layout from "../../Components/Layout";
-import FeaturedProducts from "../../Components/Shared/Featured-products";
+import FeaturedProduct from "../../Components/Shared/Featured-products";
 import { ProductsContext } from "../../Context/Products-context";
-import "./shop.styles.scss";
+// import "./shop.styles.scss";
 
 const Shop = () => {
   const { products } = useContext(ProductsContext);
