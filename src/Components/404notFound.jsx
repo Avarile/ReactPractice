@@ -1,13 +1,13 @@
-import React from "react";
-import Layout from "./Layout";
-import Hero from "./Hero/Hero";
-import { Link } from "react-router-dom";
+import React from "react"
+import Layout from "./Layout"
+// import Hero from "./Hero/Hero";
+import { Link } from "react-router-dom"
 
 const NotFound = () => {
   const style = {
     fontWeight: "bold",
     textAlign: "center",
-  };
+  }
   return (
     <Layout>
       <section className="hero is-large is-info hero-image">
@@ -19,14 +19,13 @@ const NotFound = () => {
                 textAlign: "center",
                 fontWeight: "bold",
                 cursor: "pointer",
-              }}
-            >
+              }}>
               Back to Home
             </p>
           </Link>
         </div>
       </section>
     </Layout>
-  );
-};
-export default NotFound;
+  )
+}
+export default NotFound

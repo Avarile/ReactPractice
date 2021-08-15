@@ -9,16 +9,16 @@ import Footer from "./Components/Foot/Footer"
 import SingleProduct from "./Components/SingleProduct/SingleProduct"
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/shop" component={Shop} />
-        <Route path="/product/:id" component={SingleProduct} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </>
-  )
+    return (
+        <>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/shop" component={Shop} />
+                <Route path="/product/:id" component={SingleProduct} />
+                <Route component={NotFound} />
+            </Switch>
+            <Footer />
+        </>
+    )
 }

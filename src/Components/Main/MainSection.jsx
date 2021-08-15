@@ -1,7 +1,7 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import StudioBag from "../../Assets/img/studio-bag.png";
-import "./main.styles.scss";
+import React from "react"
+// import { withRouter } from "react-router-dom";
+import StudioBag from "../../Assets/img/studio-bag.png"
+import "./main.styles.scss"
 
 export default function MainSection({ history }) {
   return (
@@ -21,12 +21,11 @@ export default function MainSection({ history }) {
           <button
             className="button is-black"
             id="shop-now"
-            onClick={() => history.push("/product/1")}
-          >
+            onClick={() => history.push("/product/1")}>
             STUDIO BAG
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
