@@ -1,0 +1,18 @@
+{
+  "user": [],
+  "teams": [
+    {"id":1,
+    "name":}
+  ],
+  "skills": [],
+  "buffs": [],
+  "debuffs": [],
+  "heroes": [],
+  "equipments": {
+    "armor": [],
+    "weapon": {
+      "melee": [],
+      "range": []
+    }
+  }
+}

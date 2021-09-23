@@ -1,5 +1,4 @@
-.layout-container {
-  display: grid;
-  grid-template-columns: 2fr, 2fr;
-  grid-template-rows: 1fr;
+.landingpage-title {
+  text-align: center;
+  margin-top: 20rem;
 }

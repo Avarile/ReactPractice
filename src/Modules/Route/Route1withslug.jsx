@@ -1,6 +1,3 @@
-import React, { Children } from "react"
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom"
-
 export default function ParamsExample() {
   return (
     <Router>

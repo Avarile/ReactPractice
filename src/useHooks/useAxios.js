@@ -15,7 +15,7 @@ export const useAxios = ({ url, method, body = null, headers = null }) => {
       .then((res) => {
         setResponse(res.data)
       })
-      //if Data is got , response = res.data, now we can return response, main goal is achieved.
+      //if Data is got , response = res.data, now we can return response, main goal is achieved.eeEEEEEE
 
       .catch((err) => {
         setError(err)

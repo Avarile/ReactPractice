@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react"
 
 export default function APIcall() {
   const [counter, setCounter] = useState(() => JSON.parse(localStorage.getItem("counter")))
-  const url = `http://localhost:3001/jokes/${counter}`
+  const url = `http://localhost:3004/COFFE_DATA/${counter}`
 
   // axios.get(url).then((response) => console.log(response.data)).
 
   const limitNumber = (number) => {
-    if (number < 1 || number > 3) {
+    if (number < 1 || number > 11) {
       number = 1
     } else {
       number = number
@@ -43,21 +43,20 @@ export default function APIcall() {
         <p>Page is loading</p>
       ) : (
         <>
-          <p>{data.catch}</p>
-          <p>{data.answer}</p>
+          <p>{data.id}</p>
         </>
       )}
 
       <br />
       <button
         onClick={() => {
-          setCounter((counter) => limitNumber(counter) + 1)
+          setCounter((counter) => limitNumber(counter + 1))
         }}>
         Next Joke
       </button>
       <button
         onClick={() => {
-          setCounter((counter) => limitNumber(counter) - 1)
+          setCounter((counter) => limitNumber(counter - 1))
         }}>
         Previous Joke
       </button>
