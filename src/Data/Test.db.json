@@ -1,19 +1,46 @@
 {
-  "jokes": [
+  "HEROES_DATA": [
     {
       "id": 1,
-      "catch": "I have a daughter who' name is Anastasia !!! and she is PRETTY!!! HAHAHA",
-      "answer": "but she is mean to me!!!"
+      "name": "Avarile",
+      "skill": "DuLongZhuan",
+      "stats": {
+        "HP": 100,
+        "ATT": 8,
+        "DEF": 4,
+        "RES": 2
+      }
     },
+
     {
       "id": 2,
-      "catch": "My wife is a very good woman ... only in the Dream!!!",
-      "answer": "Living in HELL!!!!!!!!!!!!"
-    },
+      "name": "Test Personal",
+      "skill": "DanDanDaJi",
+      "stats": {
+        "HP": 100,
+        "ATT": 6,
+        "DEF": 4,
+        "RES": 3
+      }
+    }
+  ],
+  "SKILL_DATA": [
     {
-      "id": 3,
-      "catch": "I have another daughter she is still a baby",
-      "answer": "And she is like a snowwhite"
+      "id": 1,
+      "name": "DuLongZhuan",
+      "effects": {
+        "damage": 4,
+        "attack_rate_bonus": 1
+      }
+    },
+
+    {
+      "id": 2,
+      "name": "DanDanDaJi",
+      "effects": {
+        "damage": 10,
+        "attack_rate_bonus": -2
+      }
     }
   ]
 }

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 
 export default function APIcall() {
   const [counter, setCounter] = useState(() => JSON.parse(localStorage.getItem("counter")))
-  const url = `http://localhost:3004/COFFE_DATA/${counter}`
+  const url = `http://localhost:3001/HEROES_DATA/${counter}`
 
   // axios.get(url).then((response) => console.log(response.data)).
 

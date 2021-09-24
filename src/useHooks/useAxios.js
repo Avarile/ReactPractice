@@ -3,84 +3,74 @@ import axios from "axios"
 
 axios.defaults.baseURL = ""
 
-export const useAxios = ({ url, method, body = null, headers = null }) => {
-  const [response, setResponse] = useState(null)
+/**
+ fixed :
+  - no need to JSON.stringify to then immediatly do a JSON.parse
+  - don't use export defaults, because default imports are hard to search for
+  - axios already support generic request in one parameter, no need to call specialized ones
+**/
+export const useAxios = (axiosParams) => {
+  const [response, setResponse] = useState(undefined)
   const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  //receive { url, method, body = null, headers = null } as props, init 3 State, response as the data we expect to receive, error will bounce back if sth wrong happened during the process, loading, will is loading, just a state to let you know is loading or not.
-
-  const fetchData = () => {
-    axios[method](url, JSON.parse(headers), JSON.parse(body))
-      .then((res) => {
-        setResponse(res.data)
-      })
-      //if Data is got , response = res.data, now we can return response, main goal is achieved.eeEEEEEE
-
-      .catch((err) => {
-        setError(err)
-      })
-      //if the Data is unreachable for any reason, return the error, set Error = err from the server.
-
-      .finally(() => {
-        setIsLoading(false)
-      })
-    //after Data is got(compeletely) from the server, we can now set the loading to false.
+  const fetchData = async (params) => {
+    try {
+      const result = await axios.request(params)
+      setResponse(result.data)
+    } catch (error) {
+      setError(error)
+    } finally {
+      setLoading(false)
+    }
   }
 
-  //fetchData is the main logics for this hook to get the data
-
   useEffect(() => {
-    fetchData()
-  }, [method, url, body, headers])
-  //if anything changes, reload!!! mother fucker!!
+    fetchData(axiosParams)
+  }, []) // execute once only
 
-  return { response, error, isLoading }
-  //pick the fruit.
+  return { response, error, loading }
 }
 
-export default useAxios
-
-// example:
-
 // const App = () => {
-//     const { response, loading, error } = useAxios({
-//         method: 'post',
-//         url: '/posts',
-//         headers: JSON.stringify({ accept: '*/*' }),
-//         body: JSON.stringify({
-//             userId: 1,
-//             id: 19392,
-//             title: 'title',
-//             body: 'Sample text',
-//         }),
-//     });
-//     const [data, setData] = useState([]);
+//   const { response, loading, error } = useAxios({
+//     method: "POST",
+//     url: "/posts",
+//     headers: {
+//       // no need to stringify
+//       accept: "*/*",
+//     },
+//     data: {
+//       // no need to stringify
+//       userId: 1,
+//       id: 19392,
+//       title: "title",
+//       body: "Sample text",
+//     },
+//   })
 
-//     useEffect(() => {
-//         if (response !== null) {
-//             setData(response);
-//         }
-//     }, [response]);
+//   return (
+//     <div className="App">
+//       <h1>Posts</h1>
 
-//     return (
-//         <div className='App'>
-//             <h1>Posts</h1>
-
-//             {loading ? (
-//                 <p>loading...</p>
-//             ) : (
-//                 <div>
-//                     {error && (
-//                         <div>
-//                             <p>{error.message}</p>
-//                         </div>
-//                     )}
-//                     <div>{data && <p>{data.id}</p>}</div>
-//                 </div>
-//             )}
+//       {loading ? (
+//         <p>loading...</p>
+//       ) : (
+//         <div>
+//           {error && (
+//             <div>
+//               <p>{error.message}</p>
+//             </div>
+//           )}
+//           <div>
+//             {" "}
+//             {
+//               // no need to use another state to store data, response is sufficient
+//               response && <p>{response.id}</p>
+//             }
+//           </div>
 //         </div>
-//     );
-// };
-
-// export default App;
+//       )}
+//     </div>
+//   )
+// }
