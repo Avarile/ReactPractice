@@ -5,7 +5,7 @@ const client = axios.create({
   baseURL: "",
 })
 
-export default function GroupSelection() {
+export const Axios2 = () => {
   const [data, setData] = useState({})
   const [selector, setSelector] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
@@ -30,18 +30,6 @@ export default function GroupSelection() {
   return (
     <>
       <div className="player-selection-1">
-        <p>Please selecte your player</p>
-        <p>Hero Name: {name}</p>
-        <p>Skill: {skill}</p>
-        <p>Stats: </p>
-        <p>HP: {HP}</p>
-        <p>ATT: {ATT}</p>
-        <p>DEF: {DEF}</p>
-        <p>RES: {RES}</p>
-      </div>
-
-      <div className="enemy-selection-1">
-        <p>Please select your enemy</p>
         <p>Hero Name: {name}</p>
         <p>Skill: {skill}</p>
         <p>Stats: </p>
@@ -64,8 +52,6 @@ export default function GroupSelection() {
         Previous Hero
       </button>
       {selector}
-      <br />
-      <a href="/">Back to Home</a>
     </>
   )
 }

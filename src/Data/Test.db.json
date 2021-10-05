@@ -1,46 +1,5 @@
 {
-  "HEROES_DATA": [
-    {
-      "id": 1,
-      "name": "Avarile",
-      "skill": "DuLongZhuan",
-      "stats": {
-        "HP": 100,
-        "ATT": 8,
-        "DEF": 4,
-        "RES": 2
-      }
-    },
-
-    {
-      "id": 2,
-      "name": "Test Personal",
-      "skill": "DanDanDaJi",
-      "stats": {
-        "HP": 100,
-        "ATT": 6,
-        "DEF": 4,
-        "RES": 3
-      }
-    }
-  ],
-  "SKILL_DATA": [
-    {
-      "id": 1,
-      "name": "DuLongZhuan",
-      "effects": {
-        "damage": 4,
-        "attack_rate_bonus": 1
-      }
-    },
-
-    {
-      "id": 2,
-      "name": "DanDanDaJi",
-      "effects": {
-        "damage": 10,
-        "attack_rate_bonus": -2
-      }
-    }
+  "family": [
+    {"id": 1}
   ]
 }

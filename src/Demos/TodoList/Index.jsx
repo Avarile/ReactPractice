@@ -1,41 +1,33 @@
-import React, { useRef, useState, useEffect, useReducer, useContext, createContext } from "react"
+import React, { useEffect, useState } from "react"
+import axios from "axios"
+import GoodsInfo from "./GoodsInfo"
 
+const client = axios.create({
+  baseURL: "",
+})
 
-// init and config the state controls
-const todoReducer = (state, action) => {
-  switch (action.type){
-    case "ADD_TODO":
-      if(!state.todos.find(todo => todo.name === action.payload.name)){
-        state.todos.push({
-          ...action.payload,
-          // quantity : 1 , or anyother props you want to add in 
-        })
-      }
-      return {
-        ...state,
-        todos: [...state.todos],
+export default function Demo() {
+  const [data, setData] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
-      }
-    case "DELETE_TODO":
-      const newTodos = state.todos.filter( (todo) => todo.id !== action.payload.id)
+  const url = `http://localhost:3001/GoodsInfo/`
 
-    case "CLEAR_TODOS":
-      // localStorage.removeItem("todos")
-      return {
-        todos: []
+  useEffect(() => {
+    async function getData() {
+      const response = await client.get(url)
+      setData(response.data)
+    }
+    getData()
+  }, [])
 
-      }
+  if (!data) {
+    return null
   }
-} 
+  // console.log(data)
 
-// controller dispacther
-const initState = []
-const [state, dispatch] = useReducer(todosReducer, initState)
-const addTodo = (todo) => { dispatch({ type: "ADD_TODO", payload: todo})}
-const deleteTodo = (todo) => { dispatch({ type: "DELETE_TODO", payload: todo })}
-const clearTodos = () => { dispatch( { type: "CLEAR_TODOS })}
-
-const InputComponent = () => {
-  const [input, setInput] = useState({taskName:'', deadLine:'', finished: false, memo: ''})
-    
-}  
+  return (
+    <>
+      <GoodsInfo tag={data} />
+    </>
+  )
+}
