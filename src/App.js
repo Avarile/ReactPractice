@@ -6,7 +6,8 @@
 // import Index from "./Demos/TodoList/Index"
 // import Message from "./Modules/Apicall/Axois1/Message"
 //import { BackPack } from "./Demos/TodoList/BackPack/BackPackIndex"
-import {Demo} from './Demos/useHooks/TodoList/usePersistantStates'
+// import {Demo} from './Demos/useHooks/TodoList/usePersistantStates'
+// import { Index } from "./Demo/AutoList/index"
 //
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
       {/* <Index /> */}
       {/* <Message /> */}
       {/* <Axios2 /> */}
-      <Demo/>
+      {/* <Index /> */}
+      {/* <Demo/> */}
+      <p>This is The Demo HomePage</p>
     </>
   )
 }
