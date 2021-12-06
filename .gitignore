@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/Editable
 .pnp.js
 
 # testing
