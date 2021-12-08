@@ -4,7 +4,7 @@ import React from 'react'
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
 // A great library for fuzzy filtering/sorting items
 // the main filter logic is from match-sorter
-import matchSorter from 'match-sorter'
+//import matchSorter from 'match-sorter'
 // namor is a name generator to generate names
 import namor from 'namor'
 
