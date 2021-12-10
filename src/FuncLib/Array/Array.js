@@ -91,7 +91,7 @@ const LastIndex = () => {
 // Array.from()
 // Array.of()
 
-const ArrayFrom = () => {
+class ArrayFuncs {
   const string = Array.from("Matt") // the string will be break in to 'm', 'a', 't', 't'
   // from can also combine Sets and Map into an new array
   const newMapArray = new Map().set("Avarile", 'Emily').set('Anastasia', 'Aurelia')
@@ -104,7 +104,55 @@ const ArrayFrom = () => {
   // alert( array1 === array2 )  false
 
 
-  const getArge
+
+  const getArgsArray = (arguments) => {
+    return Array.from(arguments)
+  }
 }
 
+// Array.of() can turn a set of args into array
 
+console.log(Array.of(1,2,3,4)); // [1, 2, 3, 4]
+
+
+// Array empty slot and REMEMBER this is not encouraged to be used!!!
+
+const options = [, , , ,] // an array has 5 elements
+console.log(options.length); //5
+console.log(options); // [, , , ,] and they are all undefined
+
+// those empties are undefined
+const options = [1, , , ,5]
+
+for (const option of options) {
+  console.log(option === undefined);
+}
+// false
+// true
+// true
+// true
+// false
+
+// example 2:
+const a = Array.from([, , ,])
+for (val of a) {
+  console.log(val === undefined);
+}
+// true
+// true
+// true
+
+
+// this is not encouraged to be used
+
+
+// Important Contents1: Add/Delete elements in an Array
+// Important Contents1: Add/Delete elements in an Array
+// Important Contents1: Add/Delete elements in an Array
+
+// method1: length
+
+const colors = ['red', 'green', 'blue', 'white', 'black'] // we have an array with 5 elements
+colors.length = 4
+console.log(colors[4]); // print the 5th element of the array but the array length already been decreased to 4, 
+// undefined
