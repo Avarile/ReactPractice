@@ -4,7 +4,8 @@
 //import {DemoForm} from './Components/Form/Form'
 //import {DemoTable} from './Components/Table/ReactTable'
 //import {DemoTableSorting} from './Components/Table/SortingTable'
-import {CustomTable} from './Components/Table/CustomTable'
+// import {CustomTable} from './Components/Table/CustomTable'
+import HomePage from "./Demo/HomePage"
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <Index /> */}
       {/* <Demo/> */}
       <p>This is The Demo HomePage</p>
-      <CustomTable />
+      {/* <CustomTable /> */}
+      <HomePage />
     </>
   )
 }

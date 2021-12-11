@@ -154,5 +154,19 @@ for (val of a) {
 
 const colors = ['red', 'green', 'blue', 'white', 'black'] // we have an array with 5 elements
 colors.length = 4
-console.log(colors[4]); // print the 5th element of the array but the array length already been decreased to 4, 
+console.log(colors[4]); // print the 5th element of the array but the array length already been decreased to 4,
 // undefined
+
+
+
+
+// Determinal if an entity is an Array
+// Array.isArray()
+
+const arry = [1, 2, 3 ,4]
+
+if (Array.isArray(arry)) {
+ // any logic you wanna run 
+}
+
+
