@@ -1,0 +1,19 @@
+{
+  "Ships":{
+    "Destroyer":[
+      {
+        "id": 0,
+        "name": "Cresent Class",
+        "shipName": "",
+        "hullStrength": 500,
+        "mainCannonDamage": 25,
+        "mainCannonRange": 200,
+        "mainCannonFireRate": 
+      }
+    ]
+  },
+  "Weapons":{},
+  "Effects":{},
+  "Players":{},
+  "PlayerCurrentStats":{}
+}
