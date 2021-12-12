@@ -5,7 +5,8 @@
 //import {DemoTable} from './Components/Table/ReactTable'
 //import {DemoTableSorting} from './Components/Table/SortingTable'
 // import {CustomTable} from './Components/Table/CustomTable'
-import HomePage from "./Demo/HomePage"
+// import HomePage from "./Demo/HomePage"
+import { DotDotDot } from "./Examples/DotTyping"
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <Demo/> */}
       <p>This is The Demo HomePage</p>
       {/* <CustomTable /> */}
-      <HomePage />
+      {/* <HomePage /> */}
+      <DotDotDot />
     </>
   )
 }
