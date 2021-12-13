@@ -59,3 +59,12 @@ export const AuthProvider = ({ children }) => {
   }
   return <AuthContext.Provider children={children} value={{ Register, Login, Logout, token, user, setUser }} />
 }
+
+export const useAuth = () => {
+  const context = React.useContext(AuthContext)
+  // if the context is not available throw error
+  if (!context) {
+    throw new Error("useAuth must be used in the authProvider")
+  }
+  return context
+}
