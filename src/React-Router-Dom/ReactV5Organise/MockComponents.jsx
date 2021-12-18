@@ -11,8 +11,6 @@ export const AvarileDisplay = ({ ...props }) => {
   )
 }
 
-import React from "react"
-
 export const EmilyDisplay = ({ ...props }) => {
   return (
     <>
@@ -21,8 +19,6 @@ export const EmilyDisplay = ({ ...props }) => {
     </>
   )
 }
-
-import React from "react"
 
 export const AureliaDisplay = ({ ...props }) => {
   return (
@@ -33,8 +29,6 @@ export const AureliaDisplay = ({ ...props }) => {
   )
 }
 
-import React from "react"
-
 export const AnastasiaDisplay = ({ ...props }) => {
   return (
     <>
@@ -43,8 +37,6 @@ export const AnastasiaDisplay = ({ ...props }) => {
     </>
   )
 }
-
-import React from "react"
 
 export const FamilyDisplay = ({ ...props }) => {
   return (

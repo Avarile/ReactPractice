@@ -2,6 +2,8 @@ import { Route } from "react-router-dom"
 
 export const GetRoutes = (routes) => {
   return routes.map((prop, key) => {
+    // the key here is not a best practice,
+    // if it possible, a prop.endPoint or sth like it will be much better
     if (prop.view === "/admin") {
       return <Route path={prop.view + prop.endPoint} render={(props) => <prop.component {...props} />} key={key} />
     }

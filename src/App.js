@@ -6,7 +6,8 @@
 //import {DemoTableSorting} from './Components/Table/SortingTable'
 // import {CustomTable} from './Components/Table/CustomTable'
 // import HomePage from "./Demo/HomePage"
-import { DotDotDot } from "./Examples/DotTyping"
+// import { DotDotDot } from "./Examples/DotTyping"
+import { Index } from "./React-Router-Dom/ReactV5Organise/Index"
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <p>This is The Demo HomePage</p>
       {/* <CustomTable /> */}
       {/* <HomePage /> */}
-      <DotDotDot />
+      {/* <DotDotDot /> */}
+      <Index />
     </>
   )
 }
