@@ -1,17 +1,24 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom"
-import { MainDataProvider } from "./Data/MainDataEntrance"
+import { NavBar } from "./Components/NavBar"
+import { SideBar } from "./Components/SideBar"
+import { MainDataProviders } from "./Data/MainDataEntrance"
+
+import "./Styles/Main.css"
 
 function MainIndex() {
   return (
-    <MainDataProvider>
+    <MainDataProviders>
       <Router>
-        <Switch>
-          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-          <Redirect from="/" to="/admin/dashboard" />
-        </Switch>
+        <div className="mainlayout">
+          <SideBar className="sidebar" />
+          <NavBar className="navbar" />
+          <MainContent className="main-content" />
+          <Footer className="footer" />
+        </div>
+        <Switch></Switch>
       </Router>
-    </MainDataProvider>
+    </MainDataProviders>
   )
 }
 

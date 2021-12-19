@@ -7,7 +7,8 @@
 // import {CustomTable} from './Components/Table/CustomTable'
 // import HomePage from "./Demo/HomePage"
 // import { DotDotDot } from "./Examples/DotTyping"
-import { Index } from "./React-Router-Dom/ReactV5Organise/Index"
+// import { Index } from "./React-Router-Dom/ReactV5Organise/Index"
+import MainIndex from "./JB_Hi_Fi/MainIndex"
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <CustomTable /> */}
       {/* <HomePage /> */}
       {/* <DotDotDot /> */}
-      <Index />
+      {/* <Index /> */}
+      <MainIndex />
     </>
   )
 }

@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { useLocalStorageState } from "../../hooksLib/useLocalStorageState"
+import axios from "axios"
+import { apiUrlLogin } from "./AppScaleData"
 
 const AuthContext = React.createContext(undefined)
 AuthContext.displayName = "AuthContext"
