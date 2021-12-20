@@ -2,7 +2,9 @@ import React from "react"
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom"
 import { NavBar } from "./Components/NavBar"
 import { SideBar } from "./Components/SideBar"
+import MainContent from "./Components/MainContent"
 import { MainDataProviders } from "./Data/MainDataEntrance"
+import Footer from "./Components/Footer"
 
 import "./Styles/Main.css"
 
