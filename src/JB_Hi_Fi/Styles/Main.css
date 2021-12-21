@@ -29,11 +29,38 @@
   padding-bottom: 100px;
 }
 
-.Nav-link {
-  color: #fff;
+.sidebar-link {
+  margin: 5px 15px;
+  background-color: rgb(236, 236, 236);
+  opacity: 0.86;
+  border-radius: 4px;
+  display: block;
+  padding: 10px 15px;
+  height: 3rem;
+}
+
+.sidebar-link:hover {
+  background-color: burlywood;
   margin: 5px 15px;
   opacity: 0.86;
   border-radius: 4px;
   display: block;
   padding: 10px 15px;
+  height: 3rem;
+}
+
+.sidebar-link h4 {
+  text-decoration: none;
+  font-size: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(190, 104, 6);
+}
+
+/* End of Sidebar */
+
+/* Start of Navbar */
+
+.navbar-main {
+  height: 5rem;
+  background-color: goldenrod;
 }

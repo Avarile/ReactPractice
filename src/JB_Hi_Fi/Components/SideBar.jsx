@@ -15,9 +15,25 @@ export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
         scroll
         backdrop>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Route Selection</Offcanvas.Title>
+          <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(38, 165, 21)" }}>Route Selection</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.</Offcanvas.Body>
+        <Offcanvas.Body>
+          <Nav defaultActiveKey="/home" className="flex-column">
+            <Nav.Link href="/home" className="sidebar-link">
+              <h4>Link</h4>
+            </Nav.Link>
+            <Nav.Link href="/home" className="sidebar-link">
+              <h4 className="">Link</h4>
+            </Nav.Link>
+            <Nav.Link href="/home" className="sidebar-link">
+              <h4 className="">Link</h4>
+            </Nav.Link>
+
+            <Nav.Link eventKey="disabled" disabled className="sidebar-link">
+              Disabled
+            </Nav.Link>
+          </Nav>
+        </Offcanvas.Body>
       </Offcanvas>
     </>
   )

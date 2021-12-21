@@ -19,7 +19,6 @@ function App() {
       {/* <Axios2 /> */}
       {/* <Index /> */}
       {/* <Demo/> */}
-      <p>This is The Demo HomePage</p>
       {/* <CustomTable /> */}
       {/* <HomePage /> */}
       {/* <DotDotDot /> */}

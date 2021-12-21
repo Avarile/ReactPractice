@@ -20,7 +20,7 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="seconary" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
             <h4
