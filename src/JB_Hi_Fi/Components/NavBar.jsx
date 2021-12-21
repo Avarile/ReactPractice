@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { useLocation } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap"
 
 // import routes from "../Utls/Router"
 
-export const NavBar = () => {
+export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
   // const location = useLocation()
   // const getBrandText = () => {
   //   for (let i = 0; i < routes.length; i++) {
@@ -20,9 +20,16 @@ export const NavBar = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <h4
+              onClick={() => {
+                setSidebarOpen(!sidebarOpen)
+              }}>
+              {sidebarOpen ? "Hide SideBar" : "Show SideBar"}
+            </h4>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>

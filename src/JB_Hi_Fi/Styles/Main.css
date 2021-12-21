@@ -1,48 +1,39 @@
 /* Main area layout  */
-.mainlayout {
+/* .mainlayout {
   display: grid;
-  grid-gap: 1em;
-  grid-template-areas:
-    "navbar"
-    "sidebar"
-    "main-content"
-    "footer";
+  grid-template-columns: 2fr 10fr;
 }
 
 .sidebar {
-  grid-area: sidebar;
 }
 
 .navbar {
-  grid-area: navbar;
 }
 
 .main-content {
-  grid-area: main-content;
 }
 
 .footer {
-  grid-area: footer;
+} */
+
+/* end of the Main area Layout */
+
+/* Start of the SideBar */
+.sidebar-main-container {
+  position: relative;
+  max-height: calc(100vh - 75px);
+  min-height: 100%;
+  overflow: auto;
+  width: 260px;
+  z-index: 4;
+  padding-bottom: 100px;
 }
 
-@media only screen and (min-width: 500px) {
-  .mainlayout {
-    grid-template-columns: 20% auto;
-    grid-template-areas:
-      "header   header"
-      "sidebar  sidebar"
-      "main-content main-content"
-      "footer footer";
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .mainlayout {
-    grid-gap: 20px;
-    grid-template-columns: 2fr 10fr;
-    grid-template-areas:
-      "sidebar navbar"
-      "sidebar main-content"
-      "sidebar footer";
-  }
+.Nav-link {
+  color: #fff;
+  margin: 5px 15px;
+  opacity: 0.86;
+  border-radius: 4px;
+  display: block;
+  padding: 10px 15px;
 }
