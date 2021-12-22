@@ -14,8 +14,8 @@ function MainIndex() {
   return (
     <MainDataProviders>
       <Router>
-        <NavBar className="navbar" sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <NavBar className="navbar" sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <MainContent className="main-content" />
         <Footer className="footer" />
         <Switch></Switch>

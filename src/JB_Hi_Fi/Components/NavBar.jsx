@@ -20,14 +20,14 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="seconary" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navbar-main">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="#home" style={{ width: "120px" }}>
             <h4
               onClick={() => {
                 setSidebarOpen(!sidebarOpen)
               }}>
-              {sidebarOpen ? "Hide SideBar" : "Show SideBar"}
+              {sidebarOpen ? "𝖎𝖓𝖛𝖊𝖗𝖙" : "𝕸𝖊𝖓𝖚​​​​​"}
             </h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

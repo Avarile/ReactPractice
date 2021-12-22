@@ -13,11 +13,12 @@ export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
           setSidebarOpen()
         }}
         scroll
-        backdrop>
+        backdrop
+        className="sidebar-main-container">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(38, 165, 21)" }}>Route Selection</Offcanvas.Title>
+          <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(17, 6, 1)" }}>Route Selection</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body>        
           <Nav defaultActiveKey="/home" className="flex-column">
             <Nav.Link href="/home" className="sidebar-link">
               <h4>Link</h4>
