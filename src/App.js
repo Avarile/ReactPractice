@@ -9,14 +9,15 @@
 // import { DotDotDot } from "./Examples/DotTyping"
 // import { Index } from "./React-Router-Dom/ReactV5Organise/Index"
 import MainIndex from "./JB_Hi_Fi/MainIndex"
-import { TextDisplayWindow, PrintLogControl } from "./Examples/TextdisplayWindow"
+import { TextDisplayWindow, PrintLogControl, TextDisplay } from "./Examples/TextdisplayWindow"
 import { TextArray } from "./Examples/TextData"
 
 function App() {
   return (
     <>
       {/* <MainIndex /> */}
-      <TextDisplayWindow dataSource={TextArray} logPrintFunc={PrintLogControl} />
+      {/* <TextDisplayWindow dataSource={TextArray} logPrintFunc={PrintLogControl} /> */}
+      <TextDisplay dataSource={TextArray} />
     </>
   )
 }
