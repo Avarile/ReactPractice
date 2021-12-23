@@ -16,6 +16,9 @@ export const AuthProvider = ({ children }) => {
     return user?.username
   }
 
+  // logStatus is a mock login status cuz the Login function is not exist right now
+  const [logStatus, setLogStatus] = useState(false)
+
   const Login = (params) => {
     return axios
       .request({
@@ -59,7 +62,7 @@ export const AuthProvider = ({ children }) => {
     window.localStorage.removeItem("authenticationToken")
     setUser(null)
   }
-  return <AuthContext.Provider children={children} value={{ Register, Login, Logout, token, user, setUser }} />
+  return <AuthContext.Provider children={children} value={{ Register, Login, Logout, token, user, setUser, logStatus, setLogStatus }} />
 }
 
 export const useAuth = () => {

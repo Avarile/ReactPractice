@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import React from "react"
 import { Link } from "react-router-dom"
-import { Nav, Offcanvas } from "react-bootstrap"
-import "./SideBar.css"
+import { Nav, Offcanvas, Card } from "react-bootstrap"
 
 export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
   return (
@@ -15,39 +14,47 @@ export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
         scroll
         backdrop
         className="sidebar-main-container">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(17, 6, 1)" }}>Route Selection</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>        
-          <Nav defaultActiveKey="/home" className="flex-column">
-            <Nav.Link href="/home" className="sidebar-link">
-              <h4>Link</h4>
-            </Nav.Link>
-            <Nav.Link href="/home" className="sidebar-link">
-              <h4 className="">Link</h4>
-            </Nav.Link>
-            <Nav.Link href="/home" className="sidebar-link">
-              <h4 className="">Link</h4>
-            </Nav.Link>
+        <SideBarContentWrapper>
+          <Offcanvas.Header
+            closeButton
+            style={{
+              backgroundColor: "grey",
+              margin: "5px",
+              borderRadius: "20px  0px 20px 0px",
+              opacity: "0.8",
+            }}>
+            <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(17, 6, 1)" }}>Route Selection</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav defaultActiveKey="/home" className="flex-column">
+              <Card className="bg-dark text-white" className="sidebar-link">
+                <Card.Img src="holder.js/100px270" alt="Card image" />
+                <Card.ImgOverlay>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</Card.Text>
+                  <Card.Text>Last updated 3 mins ago</Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+              <Nav.Link href="/home" className="sidebar-link">
+                <h4 className="">Link</h4>
+              </Nav.Link>
+              <Nav.Link href="/home" className="sidebar-link">
+                <h4 className="">Link</h4>
+              </Nav.Link>
 
-            <Nav.Link eventKey="disabled" disabled className="sidebar-link">
-              Disabled
-            </Nav.Link>
-          </Nav>
-        </Offcanvas.Body>
+              <Nav.Link eventKey="disabled" disabled className="sidebar-link">
+                Disabled
+              </Nav.Link>
+            </Nav>
+          </Offcanvas.Body>
+        </SideBarContentWrapper>
       </Offcanvas>
     </>
   )
 }
 
-const SideBarWrapper = styled.div`
-  position: relative;
-  max-height: calc(100vh - 75px);
-  min-height: 100%;
-  overflow: auto;
-  width: 260px;
-  z-index: 4;
-  padding-bottom: 100px;
+const SideBarContentWrapper = styled.div`
+  padding: 2px;
 `
 const SideBarBackgroundWrapper = styled.div`
   position: absolute;

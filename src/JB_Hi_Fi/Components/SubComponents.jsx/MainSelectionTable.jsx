@@ -6,7 +6,7 @@ import Table from "react-bootstrap/Table"
 export const MainSelectionTable = (dataSource) => {
   return (
     <>
-      <Table striped bordered hover responsive="lg">
+      <Table striped bordered hover responsive="lg" style={{ color: "white" }}>
         <thead>
           <tr>
             <th>ID</th>

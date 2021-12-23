@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { MainSelectionTable } from "./SubComponents.jsx/MainSelectionTable"
-
+import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
   display: grid;
@@ -16,15 +16,15 @@ const MainContentContainer = styled.div`
 const MainContentDisplay = styled.div`
   height: 100%;
   display: block;
-  background-color: coral;
+  background-color: #e25826;
   box-shadow: 4px 5px 4px 1px grey;
 `
 const MainContentInfo = styled.div`
   height: 100%;
   display: block;
-  background-color: #3f5a0c;
+  background-color: #324908;
   box-shadow: 4px 5px 4px 1px grey;
-  overflow: auto;
+  overflow: hidden;
 `
 
 function MainContent() {
@@ -34,7 +34,9 @@ function MainContent() {
         <MainContentDisplay>
           <MainSelectionTable />
         </MainContentDisplay>
-        <MainContentInfo />
+        <MainContentInfo>
+          <InfoDisplay />
+        </MainContentInfo>
       </MainContentContainer>
     </>
   )

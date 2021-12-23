@@ -28,8 +28,9 @@
 /* Start of the SideBar */
 .sidebar-main-container {
   background-color: grey;
-  background-image: url("../Assets/pics/sidebar-1.jpg");
+  background-image: url("../Assets/bgs/ButcherClass.png");
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   top: 0;
   left: 0;
@@ -38,30 +39,28 @@
 }
 
 .sidebar-link {
-  margin: 5px 15px;
+  margin: 1px 1px;
   background-color: rgb(236, 236, 236);
   opacity: 0.86;
   border-radius: 4px;
   display: block;
-  padding: 10px 15px;
-  height: 3rem;
+  height: 8rem;
 }
 
 .sidebar-link:hover {
   background-color: burlywood;
-  margin: 5px 15px;
+  margin: 1px 1px;
   opacity: 0.86;
   border-radius: 4px;
   display: block;
-  padding: 10px 15px;
-  height: 3rem;
+  height: 8rem;
 }
 
 .sidebar-link h4 {
   text-decoration: none;
   font-size: bold;
   font-family: "Times New Roman", Times, serif;
-  color: rgb(190, 104, 6);
+  color: rgb(190, 104, 4);
 }
 
 /* End of Sidebar */
@@ -73,4 +72,10 @@
   background-color: goldenrod;
   margin: 0px 10px 10px 0px;
   box-shadow: 4px 5px 4px 1px grey;
+  z-index: 4;
+}
+
+.navbar-login-dropdown {
+  z-index: 2;
+  position: relative;
 }

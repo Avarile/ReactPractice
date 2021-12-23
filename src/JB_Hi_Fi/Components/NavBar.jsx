@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react"
 import { useLocation } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap"
-
+import { useAuth } from "../Data/AuthProvider"
 // import routes from "../Utls/Router"
 
 export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
@@ -17,7 +17,7 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
   //   // else return "Brand"
   //   return "Brand"
   // }
-
+  const { logStatus, setLogStatus } = useAuth()
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navbar-main">
@@ -33,21 +33,37 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <Nav.Link href="#fleetOrders">Fleet Orders</Nav.Link>
+              <Nav.Link href="#equipmentsManagement">Equipments Management</Nav.Link>
+              <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown">
+                <NavDropdown.Item></NavDropdown.Item>
+                <NavDropdown.Item>Action2</NavDropdown.Item>
+                <NavDropdown.Item>Action3</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                <NavDropdown.Item>Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
+              <NavDropdown title={logStatus ? "Avarile" : "Login"} id="collasible-nav-dropdown">
+                {logStatus ? (
+                  <NavDropdown.Item
+                    href="#action/3.1"
+                    onClick={() => {
+                      setLogStatus(!logStatus)
+                    }}
+                    className="navbar-login-dropdown">
+                    Logout
+                  </NavDropdown.Item>
+                ) : (
+                  <NavDropdown.Item
+                    href="#action/3.1"
+                    onClick={() => {
+                      setLogStatus(!logStatus)
+                    }}>
+                    Login
+                  </NavDropdown.Item>
+                )}
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
