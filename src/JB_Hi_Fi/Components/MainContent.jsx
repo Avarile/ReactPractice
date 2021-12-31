@@ -2,6 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { MainSelectionTable } from "./SubComponents.jsx/MainSelectionTable"
 import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
+import { ApiHttpCall } from "../Utls/Utility"
+import { useComponentDidMount } from "../../hooksLib/useMount"
+
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
   display: grid;
@@ -28,6 +31,7 @@ const MainContentInfo = styled.div`
 `
 
 function MainContent() {
+  // Well this is a FUCKING DEMO so forgive me I DID a "Avarile" here
   return (
     <>
       <MainContentContainer>

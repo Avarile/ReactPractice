@@ -1,5 +1,40 @@
+import React from "react"
 import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionTable"
 
+export const routesMap = {
+  login: {
+    name: "login-screen",
+    icon: "stillThinking",
+    path: "/login",
+    exact: true,
+    component: React.lazy(() => import("./login")),
+    key: uuid(),
+  },
+  mainScreen: {
+    name: "main-screen",
+    icon: "stillThinking",
+    path: "/maincontent",
+    exact: true,
+    component: React.lazy(() => import("./maincontent")),
+    key: uuid(),
+  },
+  shipConfig: {
+    name: "shipConfig-screen",
+    icon: "stillThinking",
+    path: "/shipconfig",
+    exact: true,
+    component: React.lazy(() => import("./shipConfig")),
+    key: uuid(),
+  },
+  personel: {
+    name: "personel-screen",
+    icon: "stillThinking",
+    path: "/personal",
+    exact: true,
+    component: React.lazy(() => import("./personel")),
+    key: uuid(),
+  },
+}
 // const dashboardRoutes = [
 //   {
 //     upgrade: true,
@@ -61,3 +96,44 @@ import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectio
 // ]
 
 // export default dashboardRoutes
+
+// lazy load examply
+
+// The fallback prop accepts any React elements that you want to render while waiting for the component to load. You can place the Suspense component anywhere above the lazy component. You can even wrap multiple lazy components with a single Suspense component.
+
+// import React, { Suspense } from 'react';
+
+// const OtherComponent = React.lazy(() => import('./OtherComponent'));
+// const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
+
+// function MyComponent() {
+//   return (
+//     <div>
+//       <Suspense fallback={<div>Loading...</div>}>
+//         <section>
+//           <OtherComponent />
+//           <AnotherComponent />
+//         </section>
+//       </Suspense>
+//     </div>
+//   );
+// }
+
+// Route based code-splitting example:
+
+// import React, { Suspense, lazy } from 'react';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// const Home = lazy(() => import('./routes/Home'));
+// const About = lazy(() => import('./routes/About'));
+
+// const App = () => (
+//   <Router>
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <Switch>
+//         <Route exact path="/" component={Home}/>
+//         <Route path="/about" component={About}/>
+//       </Switch>
+//     </Suspense>
+//   </Router>
+// );

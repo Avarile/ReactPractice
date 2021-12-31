@@ -1,0 +1,196 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Avarile",
+      "ship": [
+        {
+          "id": 1,
+          "class": "Brisbane",
+          "model": "Assault-Crusier",
+          "shipname": "FlashPoint",
+          "hp": 1200,
+          "maincannon-slot": 2,
+          "maincannon-model": 1,
+          "secondary-slot": 6,
+          "seconday-model": 2,
+          "assitant-slot": 4,
+          "assitant-model": 3
+        },
+        {
+          "id": 2,
+          "class": "Brisbane",
+          "model": "Assault-Crusier",
+          "shipname": "RockSolid",
+          "maincannon-slot": 2,
+          "maincannon-model": 1,
+          "secondary-slot": 6,
+          "seconday-model": 2,
+          "assitant-slot": 4,
+          "assitant-model": 3
+        },
+        {
+          "id": 3,
+          "class": "Sydney",
+          "model": "Destroyer",
+          "shipname": "Pinicle",
+          "hp": 600,
+          "maincannon-model": 8,
+          "maincannon-slot": 2,
+          "secondary-slot": 1,
+          "seconday-model": 9
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sparutus",
+      "ship": [
+        {
+          "id": 1,
+          "class": "Brisbane",
+          "model": "Assault-Crusier",
+          "shipname": "FlashPoint",
+          "hp": 1200,
+          "maincannon-slot": 2,
+          "maincannon-model": 1,
+          "secondary-slot": 6,
+          "seconday-model": 2,
+          "assitant-slot": 4,
+          "assitant-model": 3
+        },
+        {
+          "id": 2,
+          "class": "Brisbane",
+          "model": "Assault-Crusier",
+          "shipname": "RockSolid",
+          "maincannon-slot": 2,
+          "maincannon-model": 1,
+          "secondary-slot": 6,
+          "seconday-model": 2,
+          "assitant-slot": 4,
+          "assitant-model": 3
+        },
+        {
+          "id": 3,
+          "class": "Sydney",
+          "model": "Destroyer",
+          "shipname": "Pinicle",
+          "hp": 600,
+          "maincannon-model": 8,
+          "maincannon-slot": 2,
+          "secondary-slot": 1,
+          "seconday-model": 9
+        }
+      ]
+    }
+  ],
+  "ships": [
+    {
+      "id": 1,
+      "class": "Brisbane",
+      "model": "Assault-Crusier",
+      "shipname": "",
+      "hp": 1200,
+      "maincannon-slot": 2,
+      "maincannon-model": 1,
+      "secondary-slot": 6,
+      "seconday-model": 2,
+      "assitant-slot": 4,
+      "assitant-model": 3,
+      "speed": 6
+    },
+    {
+      "id": 2,
+      "class": "Melbourne",
+      "model": "BattleShip",
+      "shipname": "",
+      "hp": 8600,
+      "maincannon-slot": 4,
+      "maincannon-model": 4,
+      "secondary-slot": 12,
+      "seconday-model": 5,
+      "assitant-slot": 24,
+      "assitant-model": 6,
+      "anti-air-system-slot": 2,
+      "anti-air-system-model": 7,
+      "speed": 4
+    },
+    {
+      "id": 3,
+      "class": "Sydney",
+      "model": "Destroyer",
+      "shipname": "Pinicle",
+      "hp": 600,
+      "maincannon-model": 8,
+      "maincannon-slot": 2,
+      "secondary-slot": 1,
+      "seconday-model": 9,
+      "speed": 7
+    }
+  ],
+  "weapons": [
+    {
+      "id": 1,
+      "name": "182mmMid-Range 3Barrels Cannon",
+      "firepower": 182,
+      "firerange": 500,
+      "reloadtime": 24
+    },
+    {
+      "id": 2,
+      "name": "Vulken 70mm chain Cannon",
+      "firepower": 42,
+      "firerange": 170,
+      "reloadtime": 2
+    },
+    {
+      "id": 3,
+      "name": "Summer-Hailing Anti-ship Swarm missile",
+      "firepower": 120,
+      "firerange": 500,
+      "reloadtime": null
+    },
+    {
+      "id": 4,
+      "name": "Ganto Tech 240MM BattleShip RailGun",
+      "firepower": 240,
+      "firerange": 640,
+      "reloadtime": 34
+    },
+    {
+      "id": 5,
+      "name": "Ganto Tech 120MM BattleShip RailGun",
+      "firepower": 100,
+      "firerange": 450,
+      "reloadtime": 10
+    },
+    {
+      "id": 6,
+      "name": "Ganto Tech BattleShip Air-Craft Ejecting System",
+      "capacity": 24
+    },
+    {
+      "id": 7,
+      "name": "Ganto Tech BattleShip Anti-Air Symtem",
+      "firepower": 12,
+      "firerange": 60,
+      "attackrate": 15
+    },
+    {
+      "id": 8,
+      "name": "Vulken 90MM FAST Cannon",
+      "firepower": 60,
+      "firerange": 460,
+      "reloadtime": 6
+    },
+    {
+      "id": 9,
+      "name": "Vulken Anti-ship LongRange Tropital Launch System",
+      "firepower": 400,
+      "firerange": 800,
+      "reloadtime": null
+    }
+  ],
+  "effects": []
+}
