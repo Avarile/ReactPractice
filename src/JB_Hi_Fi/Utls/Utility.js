@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import qs from "query-string"
 
@@ -40,7 +40,7 @@ export const UniversalLogDisplayer = (dataSource, logSetter) => {
 
 // APIUtility
 
-export const ApiHttpCall = async ({ apiUrl, endPoint, data, token, headers, ...customConfig }) => {
+export const ApiHttpCall = ({ apiUrl, endPoint, data, token, headers, ...customConfig }) => {
   const config = {
     method: "GET",
     baseURL: "http://localhost:4000/",
@@ -49,23 +49,20 @@ export const ApiHttpCall = async ({ apiUrl, endPoint, data, token, headers, ...c
       Authorization: token ? `Bearer ${token}` : "",
       "Content-Type": data ? "application/json" : "",
     },
-    paramsSerializer: function (params) {
-      return qs.stringify(params, { arrayFormat: "brackets" })
-    },
-    timeout: 1000,
+    ...customConfig,
   }
 
-  if (config.method.toUpperCase() === "GET") {
-    endPoint = endPoint + `${qs.stringify(data)}` //  if method is get, then the data passed in will be the endpoint location
-  } else {
-    config.body = JSON.stringify(data || {}) //  if method is not get then it would be sth like post/update/
-  }
+  return axios.request({ config })
+}
 
-  return axios.request({ config }).then((response) => {
+export const testAxiosCall = () => {
+  axios({
+    method: "get",
+    url: "http://localhost:4000/players?name=Avarile",
+  }).then(function (response) {
     return response
   })
 }
-
 // I dont want to do anything to the response of the axios.request
 // {
 //   // `data` is the response that was provided by the server
@@ -104,18 +101,28 @@ export const ApiHttpCall = async ({ apiUrl, endPoint, data, token, headers, ...c
 
 // Control Components of the ApiCalls
 
-export const ApiCallController = async (callback) => {
-  const [error, setError] = useState(undefined)
-  const 
-  const response = await callback()
-  const 
+// export const ApiCallController = (callback) => {
+//   const [error, setError] = useState(undefined)
+//   const [response, setResponse] = useState(undefined)
+//   const [isLoading, setIsLoading] = useState(true)
 
-  if (response.statusText === "OK") {
-    return response.data
-  } else {
-    throw new Error("ApiCall failed")
-  }
-}
+//   const Execute = callback()
+//     .then((response) => {
+//       if (response.statusText === "OK") {
+//         setResponse(response.data)
+//         setError("")
+//         setIsLoading(false)
+//       } else {
+//         setResponse(null)
+//         setIsLoading(false)
+//       }
+//     })
+//     .catch((error) => {
+//       setError(error)
+//     })
+
+//   return [Execute, response, error, isLoading]
+// }
 
 export const useComponentWillMount = (callback) => {
   const willMount = React.useRef(true)

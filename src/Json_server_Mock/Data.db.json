@@ -1,196 +1,181 @@
 {
-  "players": [
+  "PLAYERS": [
     {
       "id": 1,
       "name": "Avarile",
-      "ship": [
-        {
-          "id": 1,
-          "class": "Brisbane",
-          "model": "Assault-Crusier",
-          "shipname": "FlashPoint",
-          "hp": 1200,
-          "maincannon-slot": 2,
-          "maincannon-model": 1,
-          "secondary-slot": 6,
-          "seconday-model": 2,
-          "assitant-slot": 4,
-          "assitant-model": 3
-        },
-        {
-          "id": 2,
-          "class": "Brisbane",
-          "model": "Assault-Crusier",
-          "shipname": "RockSolid",
-          "maincannon-slot": 2,
-          "maincannon-model": 1,
-          "secondary-slot": 6,
-          "seconday-model": 2,
-          "assitant-slot": 4,
-          "assitant-model": 3
-        },
-        {
-          "id": 3,
-          "class": "Sydney",
-          "model": "Destroyer",
-          "shipname": "Pinicle",
-          "hp": 600,
-          "maincannon-model": 8,
-          "maincannon-slot": 2,
-          "secondary-slot": 1,
-          "seconday-model": 9
-        }
-      ]
+      "lv": 20,
+      "ship": {
+        "ship1name": "Dangty Flash",
+        "ship1id": 1
+      }
     },
     {
       "id": 2,
       "name": "Sparutus",
-      "ship": [
-        {
-          "id": 1,
-          "class": "Brisbane",
-          "model": "Assault-Crusier",
-          "shipname": "FlashPoint",
-          "hp": 1200,
-          "maincannon-slot": 2,
-          "maincannon-model": 1,
-          "secondary-slot": 6,
-          "seconday-model": 2,
-          "assitant-slot": 4,
-          "assitant-model": 3
-        },
-        {
-          "id": 2,
-          "class": "Brisbane",
-          "model": "Assault-Crusier",
-          "shipname": "RockSolid",
-          "maincannon-slot": 2,
-          "maincannon-model": 1,
-          "secondary-slot": 6,
-          "seconday-model": 2,
-          "assitant-slot": 4,
-          "assitant-model": 3
-        },
-        {
-          "id": 3,
-          "class": "Sydney",
-          "model": "Destroyer",
-          "shipname": "Pinicle",
-          "hp": 600,
-          "maincannon-model": 8,
-          "maincannon-slot": 2,
-          "secondary-slot": 1,
-          "seconday-model": 9
-        }
-      ]
+      "lv": 20,
+      "ship": {
+        "ship1name": "VanGuard-Andurin",
+        "ship1id": 2,
+        "ship2name": "VanGuard-Shandora",
+        "ship2id": 2
+      }
     }
   ],
-  "ships": [
+  "SHIPS": [
     {
       "id": 1,
-      "class": "Brisbane",
-      "model": "Assault-Crusier",
-      "shipname": "",
-      "hp": 1200,
-      "maincannon-slot": 2,
-      "maincannon-model": 1,
-      "secondary-slot": 6,
-      "seconday-model": 2,
-      "assitant-slot": 4,
-      "assitant-model": 3,
-      "speed": 6
+      "class": "Brisbane Class",
+      "modle": "Heavy Assualt Crusier",
+      "endurence": 860,
+      "armor": 236,
+      "mainweapon": "200MM Augled Tech Stricker(triple shot) medium range Cannon",
+      "mainweaponinstallment": 3,
+      "secondaryweapon": "Deep-Pit Medium-close range anti-BattleShip Swarm penetration Missile",
+      "secondaryweaponinstallment": 1,
+      "assitantweapon": "Deep-Pit Medium-long range MultiFunctional Missile",
+      "assitantweaponinstallment": 2,
+      "speed": 260,
+      "acceleration": 4,
+      "desc": "Telaran Empire designed Heavy Assualt Cruiser, 12000 Ton, max-speed: 260km/hour, acceleration:40km/s, not very fast or agile, but relatively hardened, firepower is stronger than normal crusier."
     },
+
     {
       "id": 2,
-      "class": "Melbourne",
-      "model": "BattleShip",
-      "shipname": "",
-      "hp": 8600,
-      "maincannon-slot": 4,
-      "maincannon-model": 4,
-      "secondary-slot": 12,
-      "seconday-model": 5,
-      "assitant-slot": 24,
-      "assitant-model": 6,
-      "anti-air-system-slot": 2,
-      "anti-air-system-model": 7,
-      "speed": 4
+      "class": "VanGuard Class",
+      "modle": "Cannon Destroyer",
+      "endurence": 374,
+      "armor": 62,
+      "mainweapon": "120MM Arkorove Tech medium range Railgun",
+      "mainweaponinstallment": 2,
+      "secondaryweapon": "140MM Arkorove Tech Medium range Plasma Cannon",
+      "secondaryweaponinstallment": 4,
+      "assitantweapon": "SwordFish light-weight fast medium range detonate Missile",
+      "assitantweaponinstallment": 1,
+      "speed": 350,
+      "acceleration": 18,
+      "desc": "Arkorove Design Buearu's steady work, VanGuard class Destroyer is a Medium-long range bombardment fire plantform, agile, fast and deadly"
     },
+
     {
       "id": 3,
-      "class": "Sydney",
-      "model": "Destroyer",
-      "shipname": "Pinicle",
-      "hp": 600,
-      "maincannon-model": 8,
-      "maincannon-slot": 2,
-      "secondary-slot": 1,
-      "seconday-model": 9,
-      "speed": 7
+      "class": "VanGuard Class",
+      "modle": "Cannon Destroyer",
+      "endurence": 374,
+      "armor": 62,
+      "mainweapon": "120MM Arkorove Tech medium range Railgun",
+      "mainweaponinstallment": 2,
+      "secondaryweapon": "140MM Arkorove Tech Medium range Plasma Cannon",
+      "secondaryweaponinstallment": 4,
+      "assitantweapon": "SwordFish light-weight fast medium range detonate Missile",
+      "assitantweaponinstallment": 1,
+      "speed": 350,
+      "acceleration": 18,
+      "desc": "Arkorove Design Buearu's steady work, VanGuard class Destroyer is a Medium-long range bombardment fire plantform, agile, fast and deadly"
     }
   ],
-  "weapons": [
+  "WEAPONS": [
     {
       "id": 1,
-      "name": "182mmMid-Range 3Barrels Cannon",
-      "firepower": 182,
-      "firerange": 500,
-      "reloadtime": 24
+      "name": "200MM Augled Tech Stricker(triple shot) medium range Cannon",
+      "firepower": 200,
+      "max-range": 350,
+      "optimal-range": 180,
+      "armor-piercing": 28,
+      "fireinterval": 2,
+      "reload": 15,
+      "basehitrate": 25,
+      "max-shell": 80,
+      "desc": "Each firing sequence will have 3 conservertive shots, then followed a longtime reloading, Deadly for it's bursting firepower"
     },
     {
       "id": 2,
-      "name": "Vulken 70mm chain Cannon",
+      "name": "Deep-Pit Medium-close range anti-BattleShip Swarm penetration Missile",
       "firepower": 42,
-      "firerange": 170,
-      "reloadtime": 2
+      "max-range": 240,
+      "optimal-range": 200,
+      "armor-piercing": 8,
+      "fireinterval": 20,
+      "reload": null,
+      "basehitrate": 70,
+      "max-shell": 4,
+      "desc": "Deep-Pit Medium-close Missiles are medium range light-weight ship crap maker..."
     },
+
     {
       "id": 3,
-      "name": "Summer-Hailing Anti-ship Swarm missile",
-      "firepower": 120,
-      "firerange": 500,
-      "reloadtime": null
+      "name": "Deep-Pit Medium-long range MultiFunctional Missile",
+      "firepower": 68,
+      "max-range": 740,
+      "optimal-range": 600,
+      "armor-piercing": 25,
+      "fireinterval": 40,
+      "reload": null,
+      "basehitrate": 42,
+      "max-shell": 8,
+      "desc": "Deep-Pit Medium-long Missiles are medium range light multiFunctional weaponary mainly to weaken the enemy from far away..."
     },
+
     {
       "id": 4,
-      "name": "Ganto Tech 240MM BattleShip RailGun",
-      "firepower": 240,
-      "firerange": 640,
-      "reloadtime": 34
+      "name": "120MM Arkorove Tech medium range Railgun",
+      "firepower": 80,
+      "max-range": 380,
+      "optimal-range": 320,
+      "armor-piercing": 18,
+      "fireinterval": 8,
+      "reload": 4,
+      "basehitrate": 15,
+      "max-shell": 140,
+      "desc": "Arkorove Tech Railgun mainly concentrated on fire range and constant supportive power but lacks the decisive firewpower"
     },
+
     {
       "id": 5,
-      "name": "Ganto Tech 120MM BattleShip RailGun",
-      "firepower": 100,
-      "firerange": 450,
-      "reloadtime": 10
+      "name": "140MM Arkorove Tech Medium range Plasma Cannon",
+      "firepower": 140,
+      "max-range": 300,
+      "optimal-range": 160,
+      "armor-piercing": 40,
+      "fireinterval": 25,
+      "reload": 25,
+      "basehitrate": 20,
+      "max-shell": 40,
+      "desc": "Arkorove Tech Plasma Cannon is a extrodinary weaponary against armor, but slow charging speed and reload speed limited it's firepower"
     },
+
     {
       "id": 6,
-      "name": "Ganto Tech BattleShip Air-Craft Ejecting System",
-      "capacity": 24
-    },
-    {
-      "id": 7,
-      "name": "Ganto Tech BattleShip Anti-Air Symtem",
-      "firepower": 12,
-      "firerange": 60,
-      "attackrate": 15
-    },
-    {
-      "id": 8,
-      "name": "Vulken 90MM FAST Cannon",
-      "firepower": 60,
-      "firerange": 460,
-      "reloadtime": 6
-    },
-    {
-      "id": 9,
-      "name": "Vulken Anti-ship LongRange Tropital Launch System",
-      "firepower": 400,
-      "firerange": 800,
-      "reloadtime": null
+      "name": "SwordFish light-weight fast medium range detonate Missile",
+      "firepower": 67,
+      "max-range": 540,
+      "optimal-range": 400,
+      "armor-piercing": 2,
+      "fireinterval": 25,
+      "reload": null,
+      "basehitrate": 85,
+      "max-shell": 16,
+      "desc": "SwordFish light-weight Detonate Missile is a very accurate weapon against small and fast adverseries, it's firepower is strong enough for those light-weight ships, although this weapon lacks armor-piercing abilities, but normally their targets doesn't have any"
     }
   ],
-  "effects": []
+  "STATUS": [
+    {
+      "name": "Destroied"
+    },
+    {
+      "name": "Damaged"
+    },
+    {
+      "name": "Depleted"
+    },
+    {
+      "name": "on Fire"
+    },
+    {
+      "name": "Out of Contorl"
+    },
+    {
+      "name": "Critical Condition"
+    }
+  ],
+  "EFFECTS": []
 }

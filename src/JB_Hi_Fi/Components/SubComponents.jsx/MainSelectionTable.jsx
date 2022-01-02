@@ -3,9 +3,12 @@
 import React from "react"
 import Table from "react-bootstrap/Table"
 
-export const MainSelectionTable = (dataSource) => {
+import { useApiData } from "../../Data/ApiProvider"
 
-    
+export const MainSelectionTable = (dataSource) => {
+  const { shipData } = useApiData()
+
+  console.log(shipData[0])
 
   return (
     <>
@@ -25,18 +28,7 @@ export const MainSelectionTable = (dataSource) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <tr>  </tr>
         </tbody>
       </Table>
     </>
