@@ -4,29 +4,34 @@
       "id": 1,
       "name": "Avarile",
       "lv": 20,
-      "ship": {
-        "ship1name": "Dangty Flash",
-        "ship1id": 1
-      }
+      "ship-1": "FlashBang",
+      "ship-1-model": "Brisbane",
+      "ship-1-endurance": 860,
+      "ship-2": "Empire's Pride",
+      "ship-2-model": "Cleaven",
+      "ship-2-endurance": 1420
     },
     {
       "id": 2,
       "name": "Sparutus",
       "lv": 20,
-      "ship": {
-        "ship1name": "VanGuard-Andurin",
-        "ship1id": 2,
-        "ship2name": "VanGuard-Shandora",
-        "ship2id": 2
-      }
+      "ship-1": "Vanguard-Briser",
+      "ship-1-model": "VanGuard",
+      "ship-1-endurance": 374,
+      "ship-2": "Vanguard-Telecap",
+      "ship-2-model": "VanGuard",
+      "ship-2-endurance": 374,
+      "ship-3": "Empire's Sword",
+      "ship-3-model": "Cleaven",
+      "ship-3-endurance": 1420
     }
   ],
   "SHIPS": [
     {
       "id": 1,
-      "class": "Brisbane Class",
-      "modle": "Heavy Assualt Crusier",
-      "endurence": 860,
+      "class": "Brisbane",
+      "model": "Heavy Assualt Crusier",
+      "endurance": 860,
       "armor": 236,
       "mainweapon": "200MM Augled Tech Stricker(triple shot) medium range Cannon",
       "mainweaponinstallment": 3,
@@ -34,16 +39,16 @@
       "secondaryweaponinstallment": 1,
       "assitantweapon": "Deep-Pit Medium-long range MultiFunctional Missile",
       "assitantweaponinstallment": 2,
-      "speed": 260,
-      "acceleration": 4,
-      "desc": "Telaran Empire designed Heavy Assualt Cruiser, 12000 Ton, max-speed: 260km/hour, acceleration:40km/s, not very fast or agile, but relatively hardened, firepower is stronger than normal crusier."
+      "speed": 300,
+      "acceleration": 6,
+      "desc": "Telaran Empire designed Heavy Assualt Cruiser, 12000 Ton, max-speed: 300km/hour, acceleration:60km/s, not very fast or agile, but relatively hardened, firepower is stronger than normal crusier."
     },
 
     {
       "id": 2,
-      "class": "VanGuard Class",
-      "modle": "Cannon Destroyer",
-      "endurence": 374,
+      "class": "VanGuard",
+      "model": "Cannon Destroyer",
+      "endurance": 374,
       "armor": 62,
       "mainweapon": "120MM Arkorove Tech medium range Railgun",
       "mainweaponinstallment": 2,
@@ -58,19 +63,19 @@
 
     {
       "id": 3,
-      "class": "VanGuard Class",
-      "modle": "Cannon Destroyer",
-      "endurence": 374,
-      "armor": 62,
-      "mainweapon": "120MM Arkorove Tech medium range Railgun",
-      "mainweaponinstallment": 2,
-      "secondaryweapon": "140MM Arkorove Tech Medium range Plasma Cannon",
-      "secondaryweaponinstallment": 4,
-      "assitantweapon": "SwordFish light-weight fast medium range detonate Missile",
+      "class": "Cleaven",
+      "model": "BattleCrusier",
+      "endurance": 1420,
+      "armor": 355,
+      "mainweapon": "380MM Torrance Empire Made Long Range Cannon",
+      "mainweaponinstallment": 6,
+      "secondaryweapon": "True-Sight Torrance Empire Made Long Range All-Purpose Missile",
+      "secondaryweaponinstallment": 2,
+      "assitantweapon": "Torrance Empire Made SpaceCraft Ejector",
       "assitantweaponinstallment": 1,
-      "speed": 350,
-      "acceleration": 18,
-      "desc": "Arkorove Design Buearu's steady work, VanGuard class Destroyer is a Medium-long range bombardment fire plantform, agile, fast and deadly"
+      "speed": 270,
+      "acceleration": 4,
+      "desc": "Torrance Empire Designed Cleaven Class BC is an extrodinary full range Strick force not easily reconed with. As normal BC, Cleaven class is fast as a Cruiser and Can project firepower as an BattleShip. As all other BC, Cleaven Class made a sacrifice on the Defence as well. 52000 Ton Fully Loaded, Max-speed: 270km/hour, acceleration: 40km/s"
     }
   ],
   "WEAPONS": [
@@ -155,6 +160,48 @@
       "basehitrate": 85,
       "max-shell": 16,
       "desc": "SwordFish light-weight Detonate Missile is a very accurate weapon against small and fast adverseries, it's firepower is strong enough for those light-weight ships, although this weapon lacks armor-piercing abilities, but normally their targets doesn't have any"
+    },
+
+    {
+      "id": 7,
+      "name": "380MM Torrance Empire Made Long Range Cannon",
+      "firepower": 380,
+      "max-range": 460,
+      "optimal-range": 360,
+      "armor-piercing": 60,
+      "fireinterval": 30,
+      "reload": 24,
+      "basehitrate": 15,
+      "max-shell": 100,
+      "desc": "Torrance Empire Made 380MM Long range Cannon is an Extrodinary full range Weaponary against any kind of adversary. "
+    },
+
+    {
+      "id": 8,
+      "name": "True-Sight Torrance Empire Made Long Range All-Purpose Missile",
+      "firepower": 240,
+      "max-range": 800,
+      "optimal-range": 670,
+      "armor-piercing": 23,
+      "fireinterval": 60,
+      "reload": null,
+      "basehitrate": 45,
+      "max-shell": 20,
+      "desc": "Torrance Empire Made Long range All-Purpose Missile is an universal Missile can be used against any target from far away. "
+    },
+
+    {
+      "id": 9,
+      "name": "Torrance Empire Made SpaceCraft Ejector",
+      "firepower": null,
+      "max-range": 1000,
+      "optimal-range": 1000,
+      "armor-piercing": null,
+      "fireinterval": 20,
+      "reload": 20,
+      "basehitrate": null,
+      "max-shell": 10,
+      "desc": "Torrance Empire Made Long range All-Purpose Missile is an universal Missile can be used against any target from far away. "
     }
   ],
   "STATUS": [
@@ -177,5 +224,18 @@
       "name": "Critical Condition"
     }
   ],
-  "EFFECTS": []
+  "EFFECTS": [],
+  "SPACECRAFTS": [
+    {
+      "id": 1,
+      "name": "Hurrican Heavy Attacker",
+      "endurance": 60,
+      "weapon-1": "HellFire Bombardment anti-ship System",
+      "weapon-1-damage": 89,
+      "weapon-1-basehitrate": 75,
+      "weapon-2": "Stinger anti-air Missiles",
+      "weapon-2-damage": 21,
+      "weapon-2-basehitrate": 20
+    }
+  ]
 }
