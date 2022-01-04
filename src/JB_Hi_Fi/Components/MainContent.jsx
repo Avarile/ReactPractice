@@ -4,6 +4,7 @@ import { MainSelectionTable } from "./SubComponents.jsx/MainSelectionTable"
 import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
 import { ApiHttpCall } from "../Utls/Utility"
 import { useComponentDidMount } from "../../hooksLib/useMount"
+import MainContentBG from "../Assets/bgs/MainContentBG2.jpg"
 
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
@@ -19,7 +20,8 @@ const MainContentContainer = styled.div`
 const MainContentDisplay = styled.div`
   height: 100%;
   display: block;
-  background-color: #e25826;
+  background-color: #e9e7e7;
+  /* background-image: url(${MainContentBG}) cover; */
   box-shadow: 4px 5px 4px 1px grey;
 `
 const MainContentInfo = styled.div`

@@ -33,7 +33,7 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-              <Nav.Link href="#fleetOrders">Fleet Orders</Nav.Link>
+              <Nav.Link href="#fleetOrders">Orders</Nav.Link>
               <Nav.Link href="#equipmentsManagement">Equipments Management</Nav.Link>
               <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown">
                 <NavDropdown.Item></NavDropdown.Item>

@@ -4,26 +4,31 @@
       "id": 1,
       "name": "Avarile",
       "lv": 20,
-      "ship-1": "FlashBang",
-      "ship-1-model": "Brisbane",
-      "ship-1-endurance": 860,
-      "ship-2": "Empire's Pride",
-      "ship-2-model": "Cleaven",
-      "ship-2-endurance": 1420
+      "ship_1": "FlashBang",
+      "ship_1_class": "Brisbane",
+      "ship_1_endurance": 860,
+      "ship_1_status": "normal",
+      "ship_2": "Empire's Pride",
+      "ship_2_class": "Cleaven",
+      "ship_2_endurance": 1420,
+      "ship_2_status": "normal"
     },
     {
       "id": 2,
       "name": "Sparutus",
       "lv": 20,
-      "ship-1": "Vanguard-Briser",
-      "ship-1-model": "VanGuard",
-      "ship-1-endurance": 374,
-      "ship-2": "Vanguard-Telecap",
-      "ship-2-model": "VanGuard",
-      "ship-2-endurance": 374,
-      "ship-3": "Empire's Sword",
-      "ship-3-model": "Cleaven",
-      "ship-3-endurance": 1420
+      "ship_1": "Vanguard-Briser",
+      "ship_1_class": "VanGuard",
+      "ship_1_endurance": 374,
+      "ship_1_status": "normal",
+      "ship_2": "Vanguard-Telecap",
+      "ship_2_class": "VanGuard",
+      "ship_2_endurance": 374,
+      "ship_2_status": "normal",
+      "ship_3": "Empire's Sword",
+      "ship_3_model": "Cleaven",
+      "ship_3_endurance": 1420,
+      "ship_3_status": "normal"
     }
   ],
   "SHIPS": [
@@ -41,7 +46,8 @@
       "assitantweaponinstallment": 2,
       "speed": 300,
       "acceleration": 6,
-      "desc": "Telaran Empire designed Heavy Assualt Cruiser, 12000 Ton, max-speed: 300km/hour, acceleration:60km/s, not very fast or agile, but relatively hardened, firepower is stronger than normal crusier."
+      "desc": "Telaran Empire designed Heavy Assualt Cruiser, 12000 Ton, max-speed: 300km/hour, acceleration:60km/s, not very fast or agile, but relatively hardened, firepower is stronger than normal crusier.",
+      "pic": "I:CodeRepositoryReactReactPracticesrcJB_Hi_FiAssets\bgsBrisbaneClass.jpg"
     },
 
     {

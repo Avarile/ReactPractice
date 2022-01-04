@@ -28,7 +28,7 @@ export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
           <Offcanvas.Body>
             <Nav defaultActiveKey="/home" className="flex-column">
               <Card className="bg-dark text-white" className="sidebar-link">
-                <Card.Img src="holder.js/100px270" alt="Card image" />
+                <Card.Img src="" alt="Card image" />
                 <Card.ImgOverlay>
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</Card.Text>
