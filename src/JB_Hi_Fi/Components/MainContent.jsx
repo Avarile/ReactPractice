@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { MainSelectionTable } from "./SubComponents.jsx/MainSelectionTable"
 import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
-import { ApiHttpCall } from "../Utls/Utility"
-import { useComponentDidMount } from "../../hooksLib/useMount"
 import MainContentBG from "../Assets/bgs/MainContentBG2.jpg"
+import { routesMap } from "../Utls/Router"
+import { Switch, Route } from "react-router-dom"
 
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
@@ -34,11 +34,26 @@ const MainContentInfo = styled.div`
 
 function MainContent() {
   // Well this is a FUCKING DEMO so forgive me I DID a "Avarile" here
+
+  const getRoutes = (routes) => {
+    return routes.map((prop, key) => {
+      if (prop.layout === "/admin") {
+        return <Route path={prop.layout + prop.path} render={(props) => <prop.component {...props} />} key={key} />
+      } else {
+        return null
+      }
+    })
+  }
+
+  // const getRoutesCustom = (routes) => {
+  //   return routes.
+  // }
+
   return (
     <>
       <MainContentContainer>
         <MainContentDisplay>
-          <MainSelectionTable />
+          <Switch>{getRoutes(routesMap)}</Switch>
         </MainContentDisplay>
         <MainContentInfo>
           <InfoDisplay />

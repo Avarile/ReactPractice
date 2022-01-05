@@ -18,9 +18,9 @@ function MainIndex() {
         <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <NavBar className="navbar" sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <NotLoginScreen />
-        <MainContent className="main-content" />
+        <Route path="/admin" render={(props) => <MainContent {...props} className="main-content" />} />
+        <Redirect from="/" to="/admin/maincontent" />
         <Footer className="footer" />
-        <Switch></Switch>
       </Router>
     </MainDataProviders>
   )

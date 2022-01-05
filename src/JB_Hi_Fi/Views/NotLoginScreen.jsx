@@ -5,9 +5,9 @@ import Offcanvas from "react-bootstrap/Offcanvas"
 import backGround from "../Assets/bgs/bg2.jpg"
 
 export const NotLoginScreen = () => {
-  const { logStatus, setLogStatus } = useAuth()
+  const { logState } = useAuth()
 
-  return <NoPilotLogin show={!logStatus} backdrop={false}></NoPilotLogin>
+  return <NoPilotLogin show={!logState} backdrop={false}></NoPilotLogin>
 }
 
 const NoPilotLogin = styled(Offcanvas)`

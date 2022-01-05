@@ -12,6 +12,7 @@ export const ApiDataProvider = ({ children }) => {
   const [shipData, setShipData] = useState([])
   const [weaponData, setWeaponData] = useState([])
   const [spaceCraftData, setSpaceCraftData] = useState([])
+  const [operationSelector, setOperationSelector] = React.useState("IDLE")
   const TestData = {
     Mock: "I am Fucking Mock Data",
   }
@@ -82,10 +83,54 @@ export const ApiDataProvider = ({ children }) => {
       })
   }, [])
 
+  // export const FleetOperation = (operation) => {
+  //   switch (operation) {
+  //     case "move":
+  //       setOperationSelector({
+  //         ...operationSelector,
+  //         status: "MOVE",
+  //       })
+  //       localStorage.setItem("operationStatus", "MOVE")
+
+  //     case "idle":
+  //       setOperationSelector({
+  //         ...operationSelector,
+  //         status: "IDLE",
+  //       })
+
+  //     case "combat":
+  //       setOperationSelector({
+  //         ...operationSelector,
+  //         status: "COMBAT",
+  //       })
+
+  //     case "dock":
+  //       setOperationSelector({
+  //         ...operationSelector,
+  //         status: "DOCK",
+  //       })
+  //     default:
+  //       break
+  //   }
+  // }
+
   return (
     <ApiDataContext.Provider
       children={children}
-      value={{ playerData, setPlayerData, shipData, setShipData, weaponData, setWeaponData, spaceCraftData, setSpaceCraftData, targetPlayerData, setTargetPlayerData }}
+      value={{
+        playerData,
+        setPlayerData,
+        shipData,
+        setShipData,
+        weaponData,
+        setWeaponData,
+        spaceCraftData,
+        setSpaceCraftData,
+        targetPlayerData,
+        setTargetPlayerData,
+        operationSelector,
+        setOperationSelector,
+      }}
     />
   )
 }
@@ -94,7 +139,7 @@ export const useApiData = () => {
   const context = React.useContext(ApiDataContext)
   // if the context is not available throw error
   if (!context) {
-    throw new Error("useApiData must be used in the authProvider")
+    throw new Error("useApiData must be used in the ApiProvider")
   }
   return context
 }

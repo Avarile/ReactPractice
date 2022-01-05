@@ -1,12 +1,26 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import { useApiData } from "../Data/ApiProvider"
 
+const BreathingColor = keyframes`
+  from
+    {
+        background-color: ${(props) => props.statusFooterColor};
+    }
+    to
+    {
+        background-color: #6d6d6d;
+    }
+`
 const FooterMainContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 50px;
   background-color: ${(props) => props.statusFooterColor || `black`};
+  animation-name: ${BreathingColor};
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
   margin-top: 10px;
 `
 
@@ -20,6 +34,7 @@ const FooterStatusTextDisplay = styled.h4`
 `
 
 function Footer(currentStatus) {
+  const { operationSelector } = useApiData()
   const StatusBarSwitch = (currentStatus) => {
     switch (currentStatus) {
       case "COMBAT":
@@ -37,11 +52,6 @@ function Footer(currentStatus) {
           statusFooterColor: "grey",
           FooterText: "DOCKING",
         }
-      case "IDLE":
-        return {
-          statusFooterColor: "orange",
-          FooterText: "IDLE",
-        }
       default:
         return {
           statusFooterColor: "orange",
@@ -52,8 +62,8 @@ function Footer(currentStatus) {
 
   return (
     <>
-      <FooterMainContainer {...StatusBarSwitch(currentStatus)}>
-        <FooterStatusTextDisplay>{StatusBarSwitch(currentStatus).FooterText}</FooterStatusTextDisplay>
+      <FooterMainContainer {...StatusBarSwitch(operationSelector)}>
+        <FooterStatusTextDisplay>{StatusBarSwitch(operationSelector).FooterText}</FooterStatusTextDisplay>
       </FooterMainContainer>
     </>
   )

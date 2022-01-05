@@ -1,40 +1,60 @@
 import React from "react"
 import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionTable"
 
-export const routesMap = {
-  login: {
-    name: "login-screen",
-    icon: "stillThinking",
-    path: "/login",
-    exact: true,
-    component: React.lazy(() => import("./login")),
-    key: uuid(),
-  },
-  mainScreen: {
-    name: "main-screen",
+export const routesMap = [
+  // login: {
+  //   name: "login-screen",
+  //   icon: "stillThinking",
+  //   path: "/login",
+  //   exact: true,
+  //   component: React.lazy(() => import("./login")),
+  //   key: uuid(),
+  // },
+  {
+    name: "FlagShip",
     icon: "stillThinking",
     path: "/maincontent",
     exact: true,
-    component: React.lazy(() => import("./maincontent")),
-    key: uuid(),
+    component: MainSelectionTable,
+    key: 1,
+    layout: "/admin",
   },
-  shipConfig: {
-    name: "shipConfig-screen",
+  {
+    name: "Weaponary",
     icon: "stillThinking",
-    path: "/shipconfig",
+    path: "/weaponary",
     exact: true,
-    component: React.lazy(() => import("./shipConfig")),
-    key: uuid(),
+    component: "Weaponary",
+    key: 2,
+    layout: "/admin",
   },
-  personel: {
-    name: "personel-screen",
+  {
+    name: "AssualtTroop",
     icon: "stillThinking",
-    path: "/personal",
+    path: "/assualttroop",
     exact: true,
-    component: React.lazy(() => import("./personel")),
-    key: uuid(),
+    component: "AssualtTroop",
+    key: 3,
+    layout: "/admin",
   },
-}
+
+  // shipConfig: {
+  //   name: "shipConfig-screen",
+  //   icon: "stillThinking",
+  //   path: "/shipconfig",
+  //   exact: true,
+  //   component: React.lazy(() => import("./shipConfig")),
+  //   key: uuid(),
+  // },
+  // personel: {
+  //   name: "personel-screen",
+  //   icon: "stillThinking",
+  //   path: "/personal",
+  //   exact: true,
+  //   component: React.lazy(() => import("./personel")),
+  //   key: uuid(),
+  // },
+]
 // const dashboardRoutes = [
 //   {
 //     upgrade: true,

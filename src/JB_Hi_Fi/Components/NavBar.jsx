@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, NavLink } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap"
 import { useAuth } from "../Data/AuthProvider"
+import { routesMap } from "../Utls/Router"
+import { useApiData } from "../Data/ApiProvider"
 // import routes from "../Utls/Router"
 
 export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
@@ -17,7 +19,10 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
   //   // else return "Brand"
   //   return "Brand"
   // }
-  const { logStatus, setLogStatus } = useAuth()
+  const { FakeSignin, FakeLogout, logState, setLogState, persistState } = useAuth()
+
+  const { setOperationSelector, operationSelector } = useApiData()
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navbar-main">
@@ -33,32 +38,64 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-              <Nav.Link href="#fleetOrders">Orders</Nav.Link>
-              <Nav.Link href="#equipmentsManagement">Equipments Management</Nav.Link>
+              {/* <Nav.Link href="#fleetOrders">Orders</Nav.Link>
+              <Nav.Link href="/admin/equipmentsManagement">Equipments Management</Nav.Link>
               <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown">
                 <NavDropdown.Item></NavDropdown.Item>
                 <NavDropdown.Item>Action2</NavDropdown.Item>
                 <NavDropdown.Item>Action3</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>Separated link</NavDropdown.Item>
+              </NavDropdown> */}
+              {routesMap.map((route) => {
+                return (
+                  <Nav.Link key={route.key}>
+                    <NavLink to={route.layout + route.path} style={{ textDecoration: "none", fontSize: "20px", color: "white", textShadow: "2px, 2px, 2px, black" }}>
+                      {route.name}
+                    </NavLink>
+                  </Nav.Link>
+                )
+              })}
+              <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown" style={{ fontSize: "20px", marginLeft: "40px" }}>
+                <NavDropdown.Item onClick={() => setOperationSelector("MOVING")}>Move</NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    setOperationSelector("COMBAT")
+                  }}>
+                  Combat
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    setOperationSelector("DOCKING")
+                  }}>
+                  Dock
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    setOperationSelector("IDLE")
+                  }}>
+                  Stop
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
-              <NavDropdown title={logStatus ? "Avarile" : "Login"} id="collasible-nav-dropdown">
-                {logStatus ? (
+              <NavDropdown title={logState ? "Avarile" : "Login"} id="collasible-nav-dropdown">
+                {logState ? (
                   <NavDropdown.Item
-                    href="#action/3.1"
+                    // href="#login"
                     onClick={() => {
-                      setLogStatus(!logStatus)
+                      FakeLogout()
+                      setLogState(false)
                     }}
                     className="navbar-login-dropdown">
                     Logout
                   </NavDropdown.Item>
                 ) : (
                   <NavDropdown.Item
-                    href="#action/3.1"
+                    // href="#logout"
                     onClick={() => {
-                      setLogStatus(!logStatus)
+                      FakeSignin()
+                      setLogState(true)
                     }}>
                     Login
                   </NavDropdown.Item>
