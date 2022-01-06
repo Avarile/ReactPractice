@@ -1,10 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { MainSelectionTable } from "./SubComponents.jsx/MainSelectionTable"
-import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
 import MainContentBG from "../Assets/bgs/MainContentBG2.jpg"
 import { routesMap } from "../Utls/Router"
 import { Switch, Route } from "react-router-dom"
+
+import { DestinationSelection } from "./SubComponents.jsx/InfoViews/DestinationSelection"
+import { DockedView } from "./SubComponents.jsx/InfoViews/DockedView"
+import { IdleView } from "./SubComponents.jsx/InfoViews/IdleView"
+import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
+
+import { ApiDataProvider, useApiData } from "../Data/ApiProvider"
 
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
@@ -35,6 +40,8 @@ const MainContentInfo = styled.div`
 function MainContent() {
   // Well this is a FUCKING DEMO so forgive me I DID a "Avarile" here
 
+  const { operationSelector } = useApiData()
+
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/admin") {
@@ -45,9 +52,24 @@ function MainContent() {
     })
   }
 
-  // const getRoutesCustom = (routes) => {
-  //   return routes.
-  // }
+  const InfoViewSelector = (status) => {
+    switch (status) {
+      case "IDLE":
+        return <IdleView />
+
+      case "COMBAT":
+        return <InfoDisplay />
+
+      case "DOCKING":
+        return <DockedView />
+
+      case "MOVING":
+        return <DestinationSelection />
+      default:
+        return <IdleView />
+        break
+    }
+  }
 
   return (
     <>
@@ -56,7 +78,7 @@ function MainContent() {
           <Switch>{getRoutes(routesMap)}</Switch>
         </MainContentDisplay>
         <MainContentInfo>
-          <InfoDisplay />
+          {InfoViewSelector(operationSelector)}
         </MainContentInfo>
       </MainContentContainer>
     </>

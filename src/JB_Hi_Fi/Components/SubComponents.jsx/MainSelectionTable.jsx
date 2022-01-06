@@ -1,9 +1,14 @@
 // this Table should receive multiple data source and render as we need
 
 import React from "react"
+import styled from "styled-components"
 import Table from "react-bootstrap/Table"
 
+import Image from "react-bootstrap/Image"
+
 import { useApiData } from "../../Data/ApiProvider"
+
+import { shipPics } from "../../Data/Pics"
 
 export const MainSelectionTable = (dataSource) => {
   const { playerData, shipData } = useApiData()
@@ -31,7 +36,7 @@ export const MainSelectionTable = (dataSource) => {
       <Table striped bordered hover responsive="lg">
         <thead>
           <tr>
-            <th>Name</th>
+            <th style={{ width: "120px" }}>Name</th>
             <th>Class</th>
             <th>Model</th>
             <th>Endurence</th>
@@ -45,25 +50,63 @@ export const MainSelectionTable = (dataSource) => {
         <tbody>
           {getPlayerShip().map((ship) => {
             return (
-              <tr key={ship.name}>
-                <td>{ship.name}</td>
-                <td>{ship.class}</td>
-                <td>{ship.model}</td>
-                <td>
-                  HP:{ship.endurance}/Armor:{ship.armor}
-                </td>
-                <td>{ship.mainweapon}</td>
-                <td>{ship.secondaryweapon}</td>
-                <td>{ship.assitantweapon}</td>
-                <td>
-                  Max:{ship.speed}/Acce{ship.acceleration}
-                </td>
-                <td>{ship.status}</td>
-              </tr>
+              <>
+                <tr key={ship.name}>
+                  <td>
+                    {ship.name}
+                    <div>
+                      <Image thumbnail src={shipPics[`${ship.class}`]} style={{ width: "50px" }} />
+                    </div>
+                  </td>
+                  <td>{ship.class}</td>
+                  <td>{ship.model}</td>
+                  <td>
+                    HP:{ship.endurance}/Armor:{ship.armor}
+                  </td>
+                  <td>{ship.mainweapon}</td>
+                  <td>{ship.secondaryweapon}</td>
+                  <td>{ship.assitantweapon}</td>
+                  <td>
+                    Max:{ship.speed}/Acce{ship.acceleration}
+                  </td>
+                  <td>{ship.status}</td>
+                </tr>
+              </>
             )
           })}
         </tbody>
       </Table>
+
+      {getPlayerShip().map((ship) => {
+        return (
+          <Table striped bordered hover responsive="lg" key={ship.name}>
+            <thead>
+              <tr>
+                <th>Ship Name</th>
+                <th>Main Weapone</th>
+                
+              </tr>
+            </thead>
+          </Table>
+        )
+      })}
     </>
   )
 }
+
+const ShipWeaponIndex = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  overflow: auto;
+  padding: 4px;
+`
+const WeaponList = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+const WeaponProgress = styled.h4`
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+`

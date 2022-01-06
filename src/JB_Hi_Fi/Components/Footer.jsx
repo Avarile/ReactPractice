@@ -9,7 +9,7 @@ const BreathingColor = keyframes`
     }
     to
     {
-        background-color: #6d6d6d;
+        background-color: #ffffff3e;
     }
 `
 const FooterMainContainer = styled.div`

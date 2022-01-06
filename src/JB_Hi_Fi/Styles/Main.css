@@ -27,15 +27,15 @@
 
 /* Start of the SideBar */
 .sidebar-main-container {
-  background-color: grey;
-  background-image: url("../Assets/bgs/ButcherClass.png");
-  background-position: center center;
+  /* background-color: grey; */
+  /* background-image: url("../Assets/bgs/ButcherClass.png"); */
+  /* background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  background-size: cover; */
+  position: absolute;
+  top: 25px;
+  height: calc(100vh - 60px);
+  width: 1000px;
 }
 
 .sidebar-link {

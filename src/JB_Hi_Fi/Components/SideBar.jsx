@@ -3,7 +3,18 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Nav, Offcanvas, Card } from "react-bootstrap"
 
-export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
+export function SideBar({ sidebarOpen, setSidebarOpen }) {
+  const DisplaySelector = (currentOperation) => {
+    switch (currentOperation) {
+      case "IDLE":
+        setSidebarOpen(true)
+
+        break
+
+      default:
+        break
+    }
+  }
   return (
     <>
       <Offcanvas
@@ -11,43 +22,11 @@ export function SideBar({ routes, image, color, sidebarOpen, setSidebarOpen }) {
         onHide={() => {
           setSidebarOpen()
         }}
+        placement="end"
         scroll
         backdrop
         className="sidebar-main-container">
-        <SideBarContentWrapper>
-          <Offcanvas.Header
-            closeButton
-            style={{
-              backgroundColor: "grey",
-              margin: "5px",
-              borderRadius: "20px  0px 20px 0px",
-              opacity: "0.8",
-            }}>
-            <Offcanvas.Title style={{ fontFamily: "Times New Roman", fontSize: "bold", color: "rgb(17, 6, 1)" }}>Route Selection</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <Nav defaultActiveKey="/home" className="flex-column">
-              <Card className="bg-dark text-white" className="sidebar-link">
-                <Card.Img src="" alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</Card.Text>
-                  <Card.Text>Last updated 3 mins ago</Card.Text>
-                </Card.ImgOverlay>
-              </Card>
-              <Nav.Link href="/home" className="sidebar-link">
-                <h4 className="">Link</h4>
-              </Nav.Link>
-              <Nav.Link href="/home" className="sidebar-link">
-                <h4 className="">Link</h4>
-              </Nav.Link>
-
-              <Nav.Link eventKey="disabled" disabled className="sidebar-link">
-                Disabled
-              </Nav.Link>
-            </Nav>
-          </Offcanvas.Body>
-        </SideBarContentWrapper>
+        <SideBarContentWrapper></SideBarContentWrapper>
       </Offcanvas>
     </>
   )
