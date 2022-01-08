@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Avarile",
       "lv": 20,
+      "current_location": "Sabban System",
       "ship_1": "FlashBang",
       "ship_1_class": "Brisbane",
       "ship_1_endurance": 860,
@@ -17,6 +18,7 @@
       "id": 2,
       "name": "Sparutus",
       "lv": 20,
+      "current_location": "Sabban System",
       "ship_1": "Vanguard-Briser",
       "ship_1_class": "VanGuard",
       "ship_1_endurance": 374,
@@ -26,7 +28,7 @@
       "ship_2_endurance": 374,
       "ship_2_status": "normal",
       "ship_3": "Empire's Sword",
-      "ship_3_model": "Cleaven",
+      "ship_3_class": "Cleaven",
       "ship_3_endurance": 1420,
       "ship_3_status": "normal"
     }
@@ -204,7 +206,7 @@
       "optimal-range": 1000,
       "armor-piercing": null,
       "fireinterval": 20,
-      "reload": 20,
+      "reload": 40,
       "basehitrate": null,
       "max-shell": 10,
       "desc": "Torrance Empire Made Long range All-Purpose Missile is an universal Missile can be used against any target from far away. "
@@ -242,6 +244,94 @@
       "weapon-2": "Stinger anti-air Missiles",
       "weapon-2-damage": 21,
       "weapon-2-basehitrate": 20
+    }
+  ],
+  "TROOPERS": [
+    {
+      "id": 1,
+      "name": "Scout-Alpha",
+      "function": "infomation",
+      "attack": 5,
+      "defence": 4
+    },
+
+    {
+      "id": 2,
+      "name": "Scout-Prima",
+      "function": "infomation",
+      "attack": 4,
+      "defence": 3
+    },
+
+    {
+      "id": 3,
+      "name": "Assualt-Prima",
+      "function": "combat",
+      "attack": 7,
+      "defence": 6
+    },
+    {
+      "id": 4,
+      "name": "Assualt-Alpha",
+      "function": "combat",
+      "attack": 8,
+      "defence": 6
+    },
+    {
+      "id": 5,
+      "name": "Attack-Alpha",
+      "function": "combat",
+      "attack": 6,
+      "defence": 6
+    },
+    {
+      "id": 6,
+      "name": "Attack-Prima",
+      "function": "combat",
+      "attack": 7,
+      "defence": 6
+    },
+    {
+      "id": 7,
+      "name": "Defence-Alpha",
+      "function": "combat",
+      "attack": 5,
+      "defence": 9
+    },
+    {
+      "id": 8,
+      "name": "Defence-Prima",
+      "function": "combat",
+      "attack": 3,
+      "defence": 8
+    },
+    {
+      "id": 9,
+      "name": "Commander",
+      "function": "operator",
+      "attack": 3,
+      "defence": 2
+    },
+    {
+      "id": 10,
+      "name": "Operator-Alpha",
+      "function": "operator",
+      "attack": 2,
+      "defence": 2
+    },
+    {
+      "id": 11,
+      "name": "Operator-Prima",
+      "function": "operator",
+      "attack": 1,
+      "defence": 2
+    },
+    {
+      "id": 12,
+      "name": "Operator-Beta",
+      "function": "operator",
+      "attack": 1,
+      "defence": 1
     }
   ]
 }

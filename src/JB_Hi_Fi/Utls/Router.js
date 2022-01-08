@@ -1,10 +1,12 @@
 import React from "react"
 import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionTable"
+import { Weaponary } from "../Components/SubComponents.jsx/Weaponary"
+import { AssualtTroops } from "../Components/SubComponents.jsx/AssualtTroops"
 
 export const routesMap = [
   // login: {
   //   name: "login-screen",
-  //   icon: "stillThinking",
+  //   icon: "   ",
   //   path: "/login",
   //   exact: true,
   //   component: React.lazy(() => import("./login")),
@@ -24,7 +26,7 @@ export const routesMap = [
     icon: "stillThinking",
     path: "/weaponary",
     exact: true,
-    component: "Weaponary",
+    component: Weaponary,
     key: 2,
     layout: "/admin",
   },
@@ -33,7 +35,7 @@ export const routesMap = [
     icon: "stillThinking",
     path: "/assualttroop",
     exact: true,
-    component: "AssualtTroop",
+    component: AssualtTroops,
     key: 3,
     layout: "/admin",
   },

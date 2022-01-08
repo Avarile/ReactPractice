@@ -7,9 +7,9 @@ import { Switch, Route } from "react-router-dom"
 import { DestinationSelection } from "./SubComponents.jsx/InfoViews/DestinationSelection"
 import { DockedView } from "./SubComponents.jsx/InfoViews/DockedView"
 import { IdleView } from "./SubComponents.jsx/InfoViews/IdleView"
-import { InfoDisplay } from "./SubComponents.jsx/InfoDisplay"
+import { InfoDisplay } from "./SubComponents.jsx/InfoViews/InfoDisplay"
 
-import { ApiDataProvider, useApiData } from "../Data/ApiProvider"
+import { useApiData } from "../Data/ApiProvider"
 
 // 100% - 80px(Navbar) -60px(footer)
 const MainContentContainer = styled.div`
@@ -77,9 +77,7 @@ function MainContent() {
         <MainContentDisplay>
           <Switch>{getRoutes(routesMap)}</Switch>
         </MainContentDisplay>
-        <MainContentInfo>
-          {InfoViewSelector(operationSelector)}
-        </MainContentInfo>
+        <MainContentInfo>{InfoViewSelector(operationSelector)}</MainContentInfo>
       </MainContentContainer>
     </>
   )
