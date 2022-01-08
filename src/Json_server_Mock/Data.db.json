@@ -250,17 +250,21 @@
     {
       "id": 1,
       "name": "Scout-Alpha",
-      "function": "infomation",
+      "function": "information",
       "attack": 5,
-      "defence": 4
+      "defence": 4,
+      "life": 2,
+      "rowcolor": "coral"
     },
 
     {
       "id": 2,
       "name": "Scout-Prima",
-      "function": "infomation",
+      "function": "information",
       "attack": 4,
-      "defence": 3
+      "defence": 3,
+      "life": 2,
+      "rowcolor": "coral"
     },
 
     {
@@ -268,70 +272,90 @@
       "name": "Assualt-Prima",
       "function": "combat",
       "attack": 7,
-      "defence": 6
+      "defence": 6,
+      "life": 3,
+      "rowcolor": "green"
     },
     {
       "id": 4,
       "name": "Assualt-Alpha",
       "function": "combat",
       "attack": 8,
-      "defence": 6
+      "defence": 6,
+      "life": 3,
+      "rowcolor": "green"
     },
     {
       "id": 5,
       "name": "Attack-Alpha",
       "function": "combat",
       "attack": 6,
-      "defence": 6
+      "defence": 6,
+      "life": 3,
+      "rowcolor": "orange"
     },
     {
       "id": 6,
       "name": "Attack-Prima",
       "function": "combat",
       "attack": 7,
-      "defence": 6
+      "defence": 6,
+      "life": 3,
+      "rowcolor": "orange"
     },
     {
       "id": 7,
       "name": "Defence-Alpha",
       "function": "combat",
       "attack": 5,
-      "defence": 9
+      "defence": 9,
+      "life": 4,
+      "rowcolor": "cyan"
     },
     {
       "id": 8,
       "name": "Defence-Prima",
       "function": "combat",
       "attack": 3,
-      "defence": 8
+      "defence": 8,
+      "life": 4,
+      "rowcolor": "cyan"
     },
     {
       "id": 9,
       "name": "Commander",
       "function": "operator",
       "attack": 3,
-      "defence": 2
+      "defence": 2,
+      "life": 3,
+      "rowcolor": "goldenrod"
     },
     {
       "id": 10,
       "name": "Operator-Alpha",
       "function": "operator",
       "attack": 2,
-      "defence": 2
+      "defence": 2,
+      "life": 1,
+      "rowcolor": "lightseagreen"
     },
     {
       "id": 11,
       "name": "Operator-Prima",
       "function": "operator",
       "attack": 1,
-      "defence": 2
+      "defence": 2,
+      "life": 1,
+      "rowcolor": "lightseagreen"
     },
     {
       "id": 12,
       "name": "Operator-Beta",
       "function": "operator",
       "attack": 1,
-      "defence": 1
+      "defence": 1,
+      "life": 1,
+      "rowcolor": "lightseagreen"
     }
   ]
 }
