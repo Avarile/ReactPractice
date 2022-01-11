@@ -1,7 +1,7 @@
 import React from "react"
-import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionTable"
-import { Weaponary } from "../Components/SubComponents.jsx/Weaponary"
-import { AssualtTroops } from "../Components/SubComponents.jsx/AssualtTroops"
+import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionView/MainSelectionTable"
+import { Weaponary } from "../Components/SubComponents.jsx/MainSelectionView/Weaponary"
+import { AssualtTroops } from "../Components/SubComponents.jsx/MainSelectionView/AssualtTroops"
 
 export const routesMap = [
   // login: {
@@ -20,6 +20,7 @@ export const routesMap = [
     component: MainSelectionTable,
     key: 1,
     layout: "/admin",
+    subroutes: [{ name: "" }],
   },
   {
     name: "Weaponary",

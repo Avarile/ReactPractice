@@ -14,6 +14,7 @@ export const ApiDataProvider = ({ children }) => {
   const [weaponData, setWeaponData] = useState([])
   const [spaceCraftData, setSpaceCraftData] = useState([])
   const [operationSelector, setOperationSelector] = React.useState("IDLE")
+  const [destinationData, setDestinationData] = useState([])
   const TestData = {
     Mock: "I am Fucking Mock Data",
   }
@@ -101,6 +102,18 @@ export const ApiDataProvider = ({ children }) => {
       })
       .then((response) => {
         setSpaceCraftData(response.data)
+      })
+      .catch((error) => {
+        throw new Error(error)
+      })
+
+    axios
+      .request({
+        method: "get",
+        url: "http://localhost:4000/DESTINATIONS",
+      })
+      .then((response) => {
+        setDestinationData(response.data)
       })
       .catch((error) => {
         throw new Error(error)
@@ -215,6 +228,8 @@ export const ApiDataProvider = ({ children }) => {
         searchParams,
         setSearchParams,
         TroopsResponse,
+        destinationData,
+        setDestinationData,
       }}
     />
   )

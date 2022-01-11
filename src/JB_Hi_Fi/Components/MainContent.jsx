@@ -32,7 +32,7 @@ const MainContentDisplay = styled.div`
 const MainContentInfo = styled.div`
   height: 100%;
   display: block;
-  background-color: #324908;
+  background-color: #f0e8e8;
   box-shadow: 4px 5px 4px 1px grey;
   overflow: hidden;
 `

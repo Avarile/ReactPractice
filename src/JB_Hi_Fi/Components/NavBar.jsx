@@ -1,9 +1,11 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { useLocation, NavLink } from "react-router-dom"
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap"
 import { useAuth } from "../Data/AuthProvider"
 import { routesMap } from "../Utls/Router"
 import { useApiData } from "../Data/ApiProvider"
+import useAudio from "../Utls/MusicPlayer"
+import BGM from "../Assets/bgm.mp3"
 // import routes from "../Utls/Router"
 
 export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
@@ -19,9 +21,19 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
   //   // else return "Brand"
   //   return "Brand"
   // }
-  const { FakeSignin, FakeLogout, logState, setLogState, persistState } = useAuth()
+  const { FakeSignin, FakeLogout, logState, setLogState } = useAuth()
 
-  const { setOperationSelector, operationSelector } = useApiData()
+  const { setOperationSelector } = useApiData()
+
+  const [playing, setPlaying, toggle] = useAudio(BGM)
+
+  useEffect(() => {
+    if (logState) {
+      setPlaying(true)
+    } else {
+      setPlaying(false)
+    }
+  }, [logState])
 
   return (
     <>
@@ -56,7 +68,7 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
                   </Nav.Link>
                 )
               })}
-              <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown" style={{ fontSize: "20px", marginLeft: "40px" }}>
+              {/* <NavDropdown title="Fleet Operation" id="collasible-nav-dropdown" style={{ fontSize: "20px", marginLeft: "40px" }}>
                 <NavDropdown.Item onClick={() => setOperationSelector("MOVING")}>Move</NavDropdown.Item>
                 <NavDropdown.Item
                   onClick={() => {
@@ -76,7 +88,7 @@ export const NavBar = ({ setSidebarOpen, sidebarOpen }) => {
                   }}>
                   Stop
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
             <Nav>
               <NavDropdown title={logState ? "Avarile" : "Login"} id="collasible-nav-dropdown">

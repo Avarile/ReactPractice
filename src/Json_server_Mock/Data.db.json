@@ -357,5 +357,67 @@
       "life": 1,
       "rowcolor": "lightseagreen"
     }
+  ],
+  "DESTINATIONS": [
+    {
+      "name": "Earth",
+      "dock": true,
+      "route1": "Moon",
+      "route1distance": 15,
+      "route2": "Saturn",
+      "route2distance": 40,
+      "route3": "Sol",
+      "route3distance": 72,
+      "route4": "StarGate",
+      "route4distance": 27
+    },
+    {
+      "name": "Moon",
+      "dock": false,
+      "route1": "Earth",
+      "route1distance": 15,
+      "route2": "Saturn",
+      "route2distance": 35,
+      "route3": "Sol",
+      "route3distance": 70,
+      "route4": "StarGate",
+      "route4distance": 25
+    },
+    {
+      "name": "Saturn",
+      "dock": false,
+      "route1": "Moon",
+      "route1distance": 35,
+      "route2": "Earth",
+      "route2distance": 40,
+      "route3": "Sol",
+      "route3distance": 38,
+      "route4": "StarGate",
+      "route4distance": 51
+    },
+    {
+      "name": "Stargate",
+      "dock": true,
+      "route1": "moon",
+      "route1distance": 25,
+      "route2": "saturn",
+      "route2distance": 51,
+      "route3": "sol",
+      "route3distance": 80,
+      "route4": "earth",
+      "route4distance": 27
+    },
+    {
+      "name": "Sol",
+      "dock": false,
+      "route1": "moon",
+      "route1distance": 25,
+      "route2": "saturn",
+      "route2distance": 51,
+      "route3": "sol",
+      "route3distance": 80,
+      "route4": "earth",
+      "route4distance": 27
+    }
   ]
 }
