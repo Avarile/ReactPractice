@@ -6,7 +6,6 @@ import MainContent from "./Components/MainContent"
 import { MainDataProviders } from "./Data/MainDataEntrance"
 import Footer from "./Components/Footer"
 import { NotLoginScreen } from "./Views/NotLoginScreen"
-import { VideoPlayer } from "./Utls/VideoPlayer"
 
 import "./Styles/Main.css"
 
@@ -16,7 +15,6 @@ function MainIndex() {
   return (
     <MainDataProviders>
       <Router>
-        <VideoPlayer selector={"Jump"} />
         <SideBar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <NavBar className="navbar" sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <NotLoginScreen />
