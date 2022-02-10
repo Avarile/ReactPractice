@@ -3,22 +3,23 @@ import styled from "styled-components"
 import DestinationBG from "../../../Assets/bgs/DestinationBG.jpg"
 import { useApiData } from "../../../Data/ApiProvider"
 import { endPointPics } from "../../../Data/Pics"
-
+import LoadingWhiletravel from "../Loadings/LoadingWhiletravel"
 import Image from "react-bootstrap/Image"
 
 export function IdleView() {
   const { destinationData, setDestinationData } = useApiData()
   const [selectedEndpoint, setSelectedEndpoint] = useState({ name: "Earth" })
   const [currentLocation, setCurrentLocation] = useState({ name: "Earth" })
-
+  const [IsTravelling, setIsTravelling] = useState(false)
   // const TravelAnimation =
 
-  const TravelAction = async (location) => {
-    const [arrived, setArrived] = useState(false)
-  }
+  // const TravelAction = async (location) => {
+  //   const [arrived, setArrived] = useState(false)
+  // }
 
   return (
     <>
+      {IsTravelling && <LoadingWhiletravel setIsTravelling={setIsTravelling} />}
       <MainContainer>
         <DestinationContainer>
           <div>
@@ -35,6 +36,7 @@ export function IdleView() {
                         setSelectedEndpoint({
                           ...endPoint,
                         })
+                        console.log(selectedEndpoint)
                       }}>
                       {endPoint.name}
                     </DestinationSingle>
@@ -44,7 +46,13 @@ export function IdleView() {
           </div>
           <Image src={endPointPics[selectedEndpoint?.name]} width="400px" style={{ marginTop: "30px", borderRadius: "2rem" }} />
           <div>
-            <button> Travel</button>
+            <button
+              onClick={() => {
+                setIsTravelling(true)
+                setCurrentLocation(selectedEndpoint.name)
+              }}>
+              Travel
+            </button>
             <p>
               You are Currently in <strong>{currentLocation.name}</strong>
             </p>

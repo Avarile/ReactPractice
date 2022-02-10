@@ -5,8 +5,7 @@ import Modal from "react-bootstrap/Modal"
 
 export const VideoPlayer = ({ selector }) => {
   let currentPlay = video[selector]
-  const videoRef = useRef(null)
-  
+  const videoRef = React.useRef(null)
 
   return (
     <>

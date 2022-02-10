@@ -2,6 +2,7 @@ import React from "react"
 import { AuthProvider } from "./AuthProvider"
 import { ApiDataProvider } from "./ApiProvider"
 import { QueryClient, QueryClientProvider } from "react-query"
+import { GlobalStatesProvider } from "./GlobalStatesProvider"
 
 // init a new instance of QueryClient
 const queryClient = new QueryClient()
@@ -11,7 +12,9 @@ export const MainDataProviders = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <ApiDataProvider>{children}</ApiDataProvider>
+        <ApiDataProvider>
+          <GlobalStatesProvider>{children}</GlobalStatesProvider>
+        </ApiDataProvider>
       </AuthProvider>
     </QueryClientProvider>
   )
