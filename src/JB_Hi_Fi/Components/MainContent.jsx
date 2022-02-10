@@ -19,7 +19,7 @@ const MainContentContainer = styled.div`
   grid-column-gap: 10px;
   grid-row-gap: 0px;
   height: calc(100vh - 80px - 60px);
-  overflow: auto;
+  overflow: scroll;
 `
 
 const MainContentDisplay = styled.div`
