@@ -1,4 +1,3 @@
-import React from "react"
 import { MainSelectionTable } from "../Components/SubComponents.jsx/MainSelectionView/MainSelectionTable"
 import { Weaponary } from "../Components/SubComponents.jsx/MainSelectionView/Weaponary"
 import { AssualtTroops } from "../Components/SubComponents.jsx/MainSelectionView/AssualtTroops"
