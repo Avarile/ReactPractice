@@ -10,6 +10,18 @@ export const CombatControl = async (target) => {
     distance: 2000,
     relativeSpeed: 0,
   })
+  
+
+
+  // Target selection
+
+  const targetSelection = () => { 
+    
+  }
+  
+  const CombatRound = async() => { 
+
+  }
   // 2nd step start the fight, combine all the weapon,
   // try {
   //   await
