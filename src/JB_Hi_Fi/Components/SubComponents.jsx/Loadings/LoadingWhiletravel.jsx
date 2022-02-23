@@ -8,7 +8,7 @@ export default function LoadingWhiletravel({ setIsTravelling }) {
     setTimeout(() => {
       setVisiable(false)
       setIsTravelling(false)
-    }, 8000)
+    }, 3000)
   }, [])
 
   return (

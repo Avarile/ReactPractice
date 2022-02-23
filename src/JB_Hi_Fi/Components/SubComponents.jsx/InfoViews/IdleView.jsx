@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import DestinationBG from "../../../Assets/bgs/DestinationBG.jpg"
 import { useApiData } from "../../../Data/ApiProvider"
@@ -9,13 +9,10 @@ import Image from "react-bootstrap/Image"
 export function IdleView() {
   const { destinationData, setDestinationData } = useApiData()
   const [selectedEndpoint, setSelectedEndpoint] = useState({ name: "Earth" })
-  const [currentLocation, setCurrentLocation] = useState({ name: "Earth" })
   const [IsTravelling, setIsTravelling] = useState(false)
-  // const TravelAnimation =
+  const currentLocationRef = useRef("Earth")
 
-  // const TravelAction = async (location) => {
-  //   const [arrived, setArrived] = useState(false)
-  // }
+  useEffect(() => {}, [])
 
   return (
     <>
@@ -26,7 +23,7 @@ export function IdleView() {
             <p>Destines</p>
 
             {destinationData.map((endPoint) => {
-              if (endPoint.name === currentLocation.name) {
+              if (endPoint.name === currentLocationRef.current) {
                 return null
               } else
                 return (
@@ -36,7 +33,6 @@ export function IdleView() {
                         setSelectedEndpoint({
                           ...endPoint,
                         })
-                        console.log(selectedEndpoint)
                       }}>
                       {endPoint.name}
                     </DestinationSingle>
@@ -49,12 +45,12 @@ export function IdleView() {
             <button
               onClick={() => {
                 setIsTravelling(true)
-                setCurrentLocation(selectedEndpoint.name)
+                currentLocationRef.current = selectedEndpoint.name
               }}>
               Travel
             </button>
             <p>
-              You are Currently in <strong>{currentLocation.name}</strong>
+              You are Currently in <strong>{currentLocationRef.current}</strong>
             </p>
           </div>
         </DestinationContainer>
