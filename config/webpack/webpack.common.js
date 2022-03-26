@@ -16,12 +16,12 @@ const cssModuleRegex = /\.module\.(css|less)$/
 const isSourceMap = !isEnvDevelopment ? process.env.GENERATE_SOURCEMAP !== "false" : false
 
 module.exports = {
-  entry: "./src/index.tsx", // 入口定义
-  resolve: {  // 文件解析
+  entry: "./src/index.tsx", // Entry definition
+  resolve: {  // Resolve options
     alias: {
-      "@": path.resolve("src"), // 别名
+      "@": path.resolve("src"), 
     },
-    extensions: [".ts", ".tsx", ".js", ".json"], // 后缀
+    extensions: [".ts", ".tsx", ".js", ".json"], 
   },
   module: {
     rules: [

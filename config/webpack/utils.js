@@ -1,6 +1,6 @@
 const path = require("path")
 const fs = require("fs")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin") // mini-css-extract-plugin this plugin is used for compress the css package after bundled together
 
 //
 const isEnvDevelopment = process.env.NODE_ENV === "development"
