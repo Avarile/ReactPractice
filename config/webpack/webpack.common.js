@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require("path") // 指定入口
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { getStyleLoaders } = require("./utils.js")
@@ -8,20 +8,20 @@ const isEnvDevelopment = process.env.NODE_ENV === "development"
 // style files regexes
 const cssRegex = /\.(css|less)$/
 const cssModuleRegex = /\.module\.(css|less)$/
-// const sassRegex = /\.(scss|sass)$/;
-// const sassModuleRegex = /\.module\.(scss|sass)$/;
+// const sassRegex = /\.(scss|sass)$/
+// const sassModuleRegex = /\.module\.(scss|sass)$/
 
 // flags
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const isSourceMap = !isEnvDevelopment ? process.env.GENERATE_SOURCEMAP !== "false" : false
 
 module.exports = {
-  entry: "./src/index.tsx",
-  resolve: {
+  entry: "./src/index.tsx", // 入口定义
+  resolve: {  // 文件解析
     alias: {
-      "@": path.resolve("src"),
+      "@": path.resolve("src"), // 别名
     },
-    extensions: [".ts", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".json"], // 后缀
   },
   module: {
     rules: [
