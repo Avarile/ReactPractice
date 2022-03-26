@@ -1,4 +1,4 @@
-const { developmentConfig, productionConfig, commonConfig } = require("./webpack");
+const { developmentConfig, productionConfig, commonConfig } = require("./webpack/webpackMain");
 const { merge } = require("webpack-merge");
 
 module.exports = (env, args) => {

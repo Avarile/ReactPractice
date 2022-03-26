@@ -300,3 +300,5 @@ export default () => {
 };
 
 ```
+
+10. Webpack Settings
