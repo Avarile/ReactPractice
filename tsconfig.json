@@ -15,7 +15,7 @@
     "paths": {
       "@DATA-CONTROLLER/*": ["src/data/dataController/*"],
       "@DATA-STORE/*": ["src/data/dataStore/*"],
-      "@COMMON/*": ["src/commom/*"],
+      "@COMMON/*": ["src/common/*"],
       "@ROUTES/*":["src/routes/*"],
       "@SRC/*":["src/*"],
       "@API/*":["src/data/api/*"]
