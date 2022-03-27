@@ -1,68 +1,146 @@
 /**
  * Cache controller
  */
+// this is localStorage and sessionStorage For development well, we can use localstorage, as for production, sessionStorage is more secure.
+// Final decision is: the production env is suppose to be the same as the development for some problem may caused unaware. So all env will be use sessionStorage
 
 class Storage {
-  static store = process.env.NODE_ENV === "development" ? window.localStorage : window.sessionStorage
+  // static store = process.env.NODE_ENV === "development" ? window.localStorage : window.sessionStorage // chose cache methods according to the env
+
+  static cacheStore = window.sessionStorage
 
 
+  // start of the tool functions
   /**
-   * get the cached value to the key
+   * check if the cachedData exist
    * @param key
-   * @returns {string | null}
+   * @returns {boolean}
    */
-  static getStorage(key: any) {
-    let value = this.store.getItem(key)
-    return this.deserialize(value)
-  }
-  
-
-  // todo: why not put objects inthe array???????????
-  /**
-   * set mutilple cache
-   * @param args Array,even number item is key, odd number item is value 
-   */
-  static setMutipleStorage(args: []) {
-    if (args.length > 0 && args.length % 2 === 0) {
-      for (let i = 0, l = args.length; i < l; i++) {
-        if (i % 2 === 0) {
-          this.setStorage(args[i], args[i + 1])
-        } else {
-          throw new Error("Wrong data format");
-        }
-        
-  
-
-      }
+  static existCachedData(key: string) {
+    if (this.cacheStore.getItem(key) !== null) {
+      return true
+    } else {
+      return false
     }
   }
 
   /**
-   * remove cached data
+   * determine if the value is valid according to the key
+   * @param value
+   * @returns boolean
+   */
+  private static isVoid(value: any) {
+    if (value === undefined || value === null || value === "") {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  /**
+   * serialization value
+   * @param value
+   * @returns {string}
+   */
+  static serialize(value: any) {
+    if (typeof value === "string") {
+      return value
+    } else {
+      return JSON.stringify(value)
+    }
+  }
+
+  /**
+   * deserialization cached value
+   * @param cachedValue
+   * @returns {*}
+   */
+  static deserialize(cachedValue: string | null) {
+    if (typeof cachedValue !== "string") {
+      return null
+    } else {
+      try {
+        return JSON.parse(cachedValue)
+      } catch (error) {
+        throw new Error("Unexpected Error during deserialization from session cache")
+      }
+    }
+  }
+  // end of the tool functions
+
+
+
+  /**
+   * get the value according to the key
+   * @param key: string
+   * @returns {string | null}
+   */
+  static getCachedDate(key: string) {
+    const value = this.cacheStore.getItem(key)
+    return this.deserialize(value)
+  }
+
+  /**
+   * Cache one item
+   * @param key
+   * @param value
+   */
+  static setCacheData(key: string, value: any) {
+    if (this.isVoid(value)) {
+      throw new Error("Cannot Cache Invalid Value")
+    } else {
+      this.cacheStore.setItem(key, this.serialize(value))
+    }
+  }
+
+  /**
+   * Cache multiple items
+   * @param args
+   */
+  static setMultipleCacheData(...args: []) {
+    try {
+      args.map((item: { key: any; value: any }) => {
+        this.setCacheData(item.key, item.value)
+      })
+    } catch (error) {
+      throw new Error("Cannot Cache Invalid Value")
+    }
+  }
+
+  /**
+   * remove cachedData
    * @param key
    */
-  static removeStorage(key: any) { 
-    this.store.removeItem(key)
+  static removeCachedData(key: string) {
+    this.cacheStore.removeItem(key)
   }
 
+  /**
+   * remove multiple cacheData
+   * @param keys
+   */
+  static removeMultipleCachedData(...keys: string[]) {
+    keys.map((key) => {
+      this.cacheStore.removeItem(key)
+    })
+  }
 
   /**
-   * purge all cached data
+   * purge the currentSession
    */
   static purge() {
-    this.store.purge()
+    this.cacheStore.clear()
   }
 
   /**
-   * set current data according to the cached data
+   * setCurrentValue according to the existence of the cached data
    * @param key
    * @param value
    * @returns {string}
    */
-  static setValueByItem(key: any, value: any) {
-    
-   }
-
-
+  static setValueDependingOnCacheStates(key: any, value: any) {
+    const cachedValue = this.serialize(this.getCachedDate(key))
+    return this.isVoid(cachedValue) ? value : cachedValue // if cachedValue is void then return the value passed in.
+  }
 }
 export default Storage
