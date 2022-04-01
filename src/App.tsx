@@ -1,11 +1,11 @@
-import React from "react"
-import RouterComp from "./routes"
+import React from "react";
+import { RouteIntegration } from "./routes";
 
 export default () => {
   return (
     <div className="content">
       Hello
-      <RouterComp />
+      <RouteIntegration />
     </div>
-  )
-}
+  );
+};

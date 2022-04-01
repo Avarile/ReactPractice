@@ -9,7 +9,6 @@ class Storage {
 
   static cacheStore = window.sessionStorage
 
-
   // start of the tool functions
   /**
    * check if the cachedData exist
@@ -67,8 +66,6 @@ class Storage {
     }
   }
   // end of the tool functions
-
-
 
   /**
    * get the value according to the key

@@ -302,3 +302,26 @@ export default () => {
 ```
 
 10. Webpack Settings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### State managment design

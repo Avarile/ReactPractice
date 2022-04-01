@@ -4,7 +4,7 @@
  */
 
 import axios from "axios"
-import Storage from "@DATA-STORE/dataStore"
+import Storage from "@DATA-STORE/session.cache"
 import { openNotificationWithIcon } from "@COMMON/utils"
 import { ACCESS_TOKEN } from "@COMMON/constants"
 
@@ -130,7 +130,7 @@ class Request {
       this._axiosInstance
         .post(url, params, config)
         .then((response: any) => {
-          resolve(response.data)
+          resolve(dispatch(setResponse(response.data)))
         })
         .catch((error: any) => {
           reject(error)
